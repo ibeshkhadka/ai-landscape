@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google AI — AI Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e5f0f7;
+    color: #1f2937;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  a { color: #0f4c81; text-decoration: none; }
+  .back { display: inline-block; margin-bottom: 20px; font-size: 12px; color: #475569; }
+  .back:hover { color: #0f172a; }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+  .subtitle { font-size: 13px; color: #475569; margin-bottom: 30px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .meta-tag { font-size: 10px; padding: 4px 9px; border-radius: 4px; background: #eff6ff; color: #0f4c81; border: 1px solid rgba(13,110,253,0.25); }
+  .meta-tag.enterprise { background: #fffbeb; color: #92400e; border-color: rgba(217,119,6,0.25); }
+  .meta-tag.closed { background: rgba(220,38,38,0.1); color: #b91c1c; border-color: rgba(220,38,38,0.28); }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 10px; }
+  .card h3 { font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 6px; }
+  .card p, .card li { font-size: 12px; color: #374151; line-height: 1.6; }
+  .card ul { padding-left: 18px; }
+  .sources { font-size: 11px; color: #6b7280; }
+  .sources a { color: #6b7280; }
+  .type-tag { font-size: 9px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; font-weight: 500; letter-spacing: 0.3px; vertical-align: middle; display: inline-block; }
+  .type-tag.llm { background: rgba(139,92,246,0.12); color: #7c3aed; border: 1px solid rgba(139,92,246,0.3); }
+  .type-tag.vlm { background: rgba(59,130,246,0.12); color: #2563eb; border: 1px solid rgba(59,130,246,0.3); }
+  .type-tag.image { background: rgba(22,163,148,0.12); color: #0f766e; border: 1px solid rgba(22,163,148,0.3); }
+  .type-tag.video { background: rgba(13,148,136,0.12); color: #0d9488; border: 1px solid rgba(13,148,136,0.3); }
+  .type-tag.audio { background: rgba(234,88,12,0.12); color: #c2410c; border: 1px solid rgba(234,88,12,0.3); }
+  .type-tag.d3d { background: rgba(217,119,6,0.12); color: #b45309; border: 1px solid rgba(217,119,6,0.3); }
+  .type-tag.voice { background: rgba(219,39,119,0.12); color: #be185d; border: 1px solid rgba(219,39,119,0.3); }
+  .type-tag.embedding { background: rgba(100,116,139,0.12); color: #475569; border: 1px solid rgba(100,116,139,0.3); }
+  .type-tag.search { background: rgba(202,138,4,0.12); color: #a16207; border: 1px solid rgba(202,138,4,0.3); }
+  .type-tag.agent { background: rgba(124,58,237,0.12); color: #7c3aed; border: 1px solid rgba(124,58,237,0.25); }
+  .type-tag.fine-tune { background: rgba(8,145,178,0.12); color: #0e7490; border: 1px solid rgba(8,145,178,0.3); }
+  .type-tag.infra { background: rgba(148,163,184,0.2); color: #475569; border: 1px solid rgba(148,163,184,0.35); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../ai-landscape.html">← Back</a>
+  <h1>Google AI</h1>
+  <div class="subtitle">Gemini 3.5 Flash daily driver. Gemini 3.1 Pro reasoning. Gemini Omni video.</div>
+  <div class="meta">
+    <span class="meta-tag">Gemini 3.5 Flash</span>
+    <span class="meta-tag">Gemini 3.1 Pro</span>
+    <span class="meta-tag">Gemini 3.1 Flash</span>
+    <span class="meta-tag">Gemini Omni</span>
+    <span class="meta-tag enterprise">ENTERPRISE</span>
+    <span class="meta-tag closed">CLOSED</span>
+  </div>
+
+  <section>
+    <h2>Latest Models and Products</h2>
+    <div class="card">
+      <h3>Gemini 3.5 Flash <span class="type-tag vlm">VLM</span></h3>
+      <p>Fast, widely available production model released May 2026 with near-Pro capability in a Flash-tier footprint. Best for agentic coding, assistants, and high-throughput workflows.</p>
+    </div>
+    <div class="card">
+      <h3>Gemini 3.1 Pro <span class="type-tag vlm">VLM</span></h3>
+      <p>High-end reasoning model with long-context analysis and agentic execution.</p>
+    </div>
+    <div class="card">
+      <h3>Gemini 3.1 Flash <span class="type-tag vlm">VLM</span></h3>
+      <p>Fast, cost-efficient variant of the 3.1 generation optimized for high-throughput and low-latency production workloads. Strong multimodal reasoning at Flash-tier pricing.</p>
+    </div>
+    <div class="card">
+      <h3>Gemini Omni <span class="type-tag vlm">VLM</span></h3>
+      <p>Unified multimodal model announced at Google I/O 2026 capable of understanding and generating video, audio, images, and text natively. Designed for end-to-end video creation, editing, and real-time multimodal interaction.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Activity and Context</h2>
+    <div class="card">
+      <p>Google announced Gemini Omni at I/O 2026 — a natively multimodal model for video creation and real-time cross-modal interaction. The 3.x generation now spans Pro, Flash, and Omni tiers, deeply integrated across Search, Workspace, and Cloud.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="sources">
+      <ul>
+        <li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5" target="_blank">Gemini 3.5 — Google Blog</a></li>
+        <li><a href="https://ai.google.dev/gemini-api/docs/models" target="_blank">Gemini API models — Google AI</a></li>
+        <li><a href="https://blog.google/technology/ai/gemini-omni-io-2026" target="_blank">Gemini Omni announced — Google Blog</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Model Tracker</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e5f0f7;
+    color: #1f2937;
+    font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .header { text-align: center; margin-bottom: 44px; }
+  .header h1 { font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .header .subtitle { font-size: 13px; color: #475569; }
+
+  .category-section { margin-bottom: 44px; }
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cbd5e1;
+  }
+  .category-header h2 { font-size: 16px; font-weight: 600; color: #0f172a; }
+  .badge {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-weight: 500;
+    background: rgba(148,163,184,0.18);
+    color: #334155;
+    border: 1px solid rgba(148,163,184,0.35);
+  }
+
+  .companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+  .company-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .company-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--card-accent);
+  }
+  .company-card:hover {
+    border-color: var(--card-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  }
+  .company-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .company-name { font-size: 15px; font-weight: 600; color: #0f172a; line-height: 1.3; }
+  .country-flag { font-size: 18px; line-height: 1; }
+  .company-tagline {
+    font-size: 12px;
+    color: #4b5563;
+    margin-bottom: 12px;
+    font-style: italic;
+    line-height: 1.55;
+  }
+  .company-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .meta-tag {
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+  }
+  .meta-tag.open {
+    background: rgba(22, 163, 148, 0.12);
+    color: #0f766e;
+    border-color: rgba(22, 163, 148, 0.35);
+  }
+  .meta-tag.closed {
+    background: rgba(220, 38, 38, 0.1);
+    color: #b91c1c;
+    border-color: rgba(220, 38, 38, 0.28);
+  }
+  .meta-tag.enterprise {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0f4c81;
+    border-color: rgba(13, 110, 253, 0.25);
+  }
+  .retention-hook {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 10px;
+    color: #6b7280;
+    font-style: italic;
+  }
+  .cat-us { --card-accent: #0ea5e9; }
+  .cat-europe { --card-accent: #ca8a04; }
+  .cat-china { --card-accent: #e11d48; }
+  .cat-infra { --card-accent: #7c3aed; }
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #cbd5e1;
+    font-size: 11px;
+    color: #64748b;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>AI Model Tracker</h1>
+    <div class="subtitle">Browse by region and access type. Open any card for model details and sources.</div>
+  </div>
+
+  <div class="category-section cat-us">
+    <div class="category-header"><h2>US Leaders</h2><span class="badge">North America</span></div>
+    <div class="companies-grid">
+      <a class="company-card" href="pages/openai.html">
+        <div class="company-header"><div class="company-name">OpenAI</div><div class="country-flag">🇺🇸</div></div>
+        <div class="company-tagline">GPT-5.5 family: daily driver + frontier. GPT-5.4: production to edge. Voice.</div>
+        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag">GPT-5.5</span><span class="meta-tag">GPT-5.4</span></div>
+        <div class="retention-hook">💡 <em>Remember: market definition is more important than best-in-class benchmarks.</em></div>
+      </a>
+      <a class="company-card" href="pages/anthropic.html">
+        <div class="company-header"><div class="company-name">Anthropic</div><div class="country-flag">🇺🇸</div></div>
+        <div class="company-tagline">Claude Fable 5 frontier. Opus 4.8 coding agents. Sonnet 4.6 production. Haiku 4.5 lightweight.</div>
+        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag">Fable 5</span><span class="meta-tag">Opus 4.8</span><span class="meta-tag">Sonnet 4.6</span><span class="meta-tag">Haiku 4.5</span></div>
+        <div class="retention-hook">💡 <em>Remember: alignment is a product, not a research footnote here.</em></div>
+      </a>
+      <a class="company-card" href="pages/google-ai.html">
+        <div class="company-header"><div class="company-name">Google AI</div><div class="country-flag">🇺🇸</div></div>
+        <div class="company-tagline">Gemini 3.5 Flash daily driver. Gemini 3.1 Pro reasoning. Gemini Omni video.</div>
+        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag enterprise">ENTERPRISE</span><span class="meta-tag">Gemini 3.5 Flash</span><span class="meta-tag">Gemini 3.1 Pro</span><span class="meta-tag">Gemini 3.1 Flash</span><span class="meta-tag">Gemini Omni</span></div>
+        <div class="retention-hook">💡 <em>Remember: their moat is integration, not model publishing.</em></div>
+      </a>
+      <a class="company-card" href="pages/meta.html">
+        <div class="company-header"><div class="company-name">Meta</div><div class="country-flag">🇺🇸</div></div>
+        <div class="company-tagline">Llama 4 open-weight multimodal family.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Llama 4</span></div>
+        <div class="retention-hook">💡 <em>Remember: openness is the strategy, not an accident.</em></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-section cat-europe">
+    <div class="category-header"><h2>Europe Strong</h2><span class="badge">EU / North America</span></div>
+    <div class="companies-grid">
+      <a class="company-card" href="pages/mistral.html">
+        <div class="company-header"><div class="company-name">Mistral</div><div class="country-flag">🇫🇷</div></div>
+        <div class="company-tagline">Mistral Large 3 frontier. Ministral 3 edge. Codestral coding.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Mistral Large 3</span><span class="meta-tag">Ministral 3</span><span class="meta-tag">Codestral</span></div>
+        <div class="retention-hook">💡 <em>Remember: small capable models, not brute force.</em></div>
+      </a>
+      <a class="company-card" href="pages/cohere.html">
+        <div class="company-header"><div class="company-name">Cohere</div><div class="country-flag">🇨🇦</div></div>
+        <div class="company-tagline">Enterprise RAG + Command A+ multimodal MoE. Rerank v4 search ranking.</div>
+        <div class="company-meta"><span class="meta-tag enterprise">ENTERPRISE</span><span class="meta-tag">Command A+</span><span class="meta-tag">Embed V4</span><span class="meta-tag">Rerank v4</span></div>
+        <div class="retention-hook">💡 <em>Remember: they compete on retrieval systems, not chat UX.</em></div>
+      </a>
+      <a class="company-card" href="pages/stability-ai.html">
+        <div class="company-header"><div class="company-name">Stability AI</div><div class="country-flag">🇬🇧</div></div>
+        <div class="company-tagline">Stable Diffusion 4 announced. SD 3.5 current. Video Diffusion. Fast 3D. Audio 3.0.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Stable Diffusion 4</span><span class="meta-tag">Stable Diffusion 3.5</span><span class="meta-tag">Stable Video Diffusion</span><span class="meta-tag">Stable Fast 3D</span><span class="meta-tag">Stable Audio 3.0</span></div>
+        <div class="retention-hook">💡 <em>Remember: the model outlasts the leadership drama.</em></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-section cat-china">
+    <div class="category-header"><h2>China Active</h2><span class="badge">APAC</span></div>
+    <div class="companies-grid">
+      <a class="company-card" href="pages/deepseek.html">
+        <div class="company-header"><div class="company-name">DeepSeek</div><div class="country-flag">🇨🇳</div></div>
+        <div class="company-tagline">DeepSeek-V4: preview Pro + Flash. Open-weight reasoning.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">DeepSeek-V4</span><span class="meta-tag">DeepSeek-R1</span></div>
+        <div class="retention-hook">💡 <em>Remember: cost-efficient reasoning is the niche.</em></div>
+      </a>
+      <a class="company-card" href="pages/alibaba.html">
+        <div class="company-header"><div class="company-name">Alibaba (Qwen)</div><div class="country-flag">🇨🇳</div></div>
+        <div class="company-tagline">Qwen 3.7 Max frontier. Qwen 3.7 Plus multimodal. Qwen 3.5 open-weight family. QwQ reasoning.</div>
+        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag open">OPEN</span><span class="meta-tag">Qwen 3.7 Max</span><span class="meta-tag">Qwen 3.7 Plus</span><span class="meta-tag">Qwen 3.5</span><span class="meta-tag">QwQ</span></div>
+        <div class="retention-hook">💡 <em>Remember: full-stack integration from chips to apps.</em></div>
+      </a>
+      <a class="company-card" href="pages/zhipu.html">
+        <div class="company-header"><div class="company-name">Zhipu AI (智谱)</div><div class="country-flag">🇨🇳</div></div>
+        <div class="company-tagline">GLM-5 family: coding flagship. GLM-5V-Turbo vision coding. AutoGLM agents.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">GLM-5</span><span class="meta-tag">GLM-5V-Turbo</span><span class="meta-tag">AutoGLM</span></div>
+        <div class="retention-hook">💡 <em>Remember: academic credibility over hype cycles.</em></div>
+      </a>
+      <a class="company-card" href="pages/moonshot.html">
+        <div class="company-header"><div class="company-name">Moonshot AI</div><div class="country-flag">🇨🇳</div></div>
+        <div class="company-tagline">Kimi K2.6 open-weight agentic. K2 Thinking reasoning.</div>
+        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag">Kimi K2.6</span><span class="meta-tag">Kimi K2.5</span><span class="meta-tag">Kimi K2 Thinking</span></div>
+        <div class="retention-hook">💡 <em>Remember: context length is brand identity, not a benchmark.</em></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-section cat-infra">
+    <div class="category-header"><h2>Infrastructure Layer</h2><span class="badge">Commons</span></div>
+    <div class="companies-grid">
+      <a class="company-card" href="pages/huggingface.html">
+        <div class="company-header"><div class="company-name">Hugging Face</div><div class="country-flag">🇺🇸</div></div>
+        <div class="company-tagline">Open model hub. Inference, datasets, agents.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Models Hub</span><span class="meta-tag">Inference API</span></div>
+        <div class="retention-hook">💡 <em>Remember: GitHub of AI models.</em></div>
+      </a>
+      <a class="company-card" href="pages/nousresearch.html">
+        <div class="company-header"><div class="company-name">NousResearch</div><div class="country-flag">🇺🇸</div></div>
+        <div class="company-tagline">Hermes 4 fine-tunes. DeepHermes 3 reasoning. Hermes Agent platform.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Hermes 4</span><span class="meta-tag">DeepHermes 3</span><span class="meta-tag">Hermes Agent</span></div>
+        <div class="retention-hook">💡 <em>Remember: fine-tune and tool-use specialists.</em></div>
+      </a>
+      <a class="company-card" href="pages/openrouter.html">
+        <div class="company-header"><div class="company-name">OpenRouter</div><div class="country-flag">🌍</div></div>
+        <div class="company-tagline">Unified API gateway. Model routing, fallbacks, cost optimization.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Unified API</span><span class="meta-tag">Model Routing</span></div>
+        <div class="retention-hook">💡 <em>Remember: one API to route them all.</em></div>
+      </a>
+      <a class="company-card" href="pages/smaller-labs.html">
+        <div class="company-header"><div class="company-name">Smaller Labs</div><div class="country-flag">🌍</div></div>
+        <div class="company-tagline">Local inference, quantization, formats.</div>
+        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">llama.cpp</span><span class="meta-tag">GGUF</span><span class="meta-tag">vLLM</span></div>
+        <div class="retention-hook">💡 <em>Remember: models are useless without shipping infrastructure.</em></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">June 2026 · Open any card for model details and sources.</div>
+</div>
+</body>
+</html>

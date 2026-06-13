@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stability AI — AI Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e5f0f7;
+    color: #1f2937;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  a { color: #0f4c81; text-decoration: none; }
+  .back { display: inline-block; margin-bottom: 20px; font-size: 12px; color: #475569; }
+  .back:hover { color: #0f172a; }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+  .subtitle { font-size: 13px; color: #475569; margin-bottom: 30px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .meta-tag { font-size: 10px; padding: 4px 9px; border-radius: 4px; background: #eff6ff; color: #0f4c81; border: 1px solid rgba(13,110,253,0.25); }
+  .meta-tag.open { background: rgba(22,163,148,0.1); color: #0f766e; border-color: rgba(22,163,148,0.3); }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 10px; }
+  .card h3 { font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 6px; }
+  .card p, .card li { font-size: 12px; color: #374151; line-height: 1.6; }
+  .card ul { padding-left: 18px; }
+  .sources { font-size: 11px; color: #6b7280; }
+  .sources a { color: #6b7280; }
+  .type-tag { font-size: 9px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; font-weight: 500; letter-spacing: 0.3px; vertical-align: middle; display: inline-block; }
+  .type-tag.llm { background: rgba(139,92,246,0.12); color: #7c3aed; border: 1px solid rgba(139,92,246,0.3); }
+  .type-tag.vlm { background: rgba(59,130,246,0.12); color: #2563eb; border: 1px solid rgba(59,130,246,0.3); }
+  .type-tag.image { background: rgba(22,163,148,0.12); color: #0f766e; border: 1px solid rgba(22,163,148,0.3); }
+  .type-tag.video { background: rgba(13,148,136,0.12); color: #0d9488; border: 1px solid rgba(13,148,136,0.3); }
+  .type-tag.audio { background: rgba(234,88,12,0.12); color: #c2410c; border: 1px solid rgba(234,88,12,0.3); }
+  .type-tag.d3d { background: rgba(217,119,6,0.12); color: #b45309; border: 1px solid rgba(217,119,6,0.3); }
+  .type-tag.voice { background: rgba(219,39,119,0.12); color: #be185d; border: 1px solid rgba(219,39,119,0.3); }
+  .type-tag.embedding { background: rgba(100,116,139,0.12); color: #475569; border: 1px solid rgba(100,116,139,0.3); }
+  .type-tag.search { background: rgba(202,138,4,0.12); color: #a16207; border: 1px solid rgba(202,138,4,0.3); }
+  .type-tag.agent { background: rgba(124,58,237,0.12); color: #7c3aed; border: 1px solid rgba(124,58,237,0.25); }
+  .type-tag.fine-tune { background: rgba(8,145,178,0.12); color: #0e7490; border: 1px solid rgba(8,145,178,0.3); }
+  .type-tag.infra { background: rgba(148,163,184,0.2); color: #475569; border: 1px solid rgba(148,163,184,0.35); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../ai-landscape.html">← Back</a>
+  <h1>Stability AI</h1>
+    <div class="subtitle">Stable Diffusion 4 announced. SD 3.5 current. Video Diffusion. Fast 3D. Audio 3.0.</div>
+  <div class="meta">
+    <span class="meta-tag">Stable Diffusion 4</span>
+    <span class="meta-tag">Stable Diffusion 3.5</span>
+    <span class="meta-tag">Stable Audio 3.0</span>
+    <span class="meta-tag">Stable Video Diffusion</span>
+    <span class="meta-tag">Stable Fast 3D</span>
+    <span class="meta-tag open">OPEN</span>
+  </div>
+
+  <section>
+    <h2>Latest Models and Products</h2>
+    <div class="card">
+      <h3>Stable Diffusion 4 (Announced) <span class="type-tag image">IMAGE</span></h3>
+      <p>Next-generation image generation family announced Apr 2026 with upgraded DiT architecture. SD4 Ultra targets native 4096x4096 resolution, improved photorealism, and dedicated text rendering. Two tiers: SD4 Base (community) and SD4 Ultra (professional).</p>
+    </div>
+    <div class="card">
+      <h3>Stable Diffusion 3.5 <span class="type-tag image">IMAGE</span></h3>
+      <p>Current open image generation family with Large (8.1B params), Large Turbo, and Medium variants. Strong prompt adherence and diverse style support.</p>
+    </div>
+    <div class="card">
+      <h3>Stable Audio 3.0 <span class="type-tag audio">AUDIO</span></h3>
+      <p>Latest audio model family released May 2026 capable of generating professional-grade music of over 6 minutes. Available in Small and Medium variants.</p>
+    </div>
+    <div class="card">
+      <h3>Stable Video Diffusion <span class="type-tag video">VIDEO</span></h3>
+      <p>Open video generation model for text-to-video, image-to-video, and frame interpolation. Supports multi-view synthesis and short-form video creation with temporal coherence.</p>
+    </div>
+    <div class="card">
+      <h3>Stable Fast 3D <span class="type-tag d3d">3D</span></h3>
+      <p>Single-image to 3D asset generation model. Produces textured 3D meshes from a single input image in seconds. Used for game asset creation, e-commerce, and virtual worlds.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Activity and Context</h2>
+    <div class="card">
+      <p>Stability AI announced Stable Diffusion 4 in April 2026, marking the first major architectural shift since SDXL — moving from U-Net to DiT. The portfolio now spans image (SD4, SD3.5), video (Stable Video Diffusion), 3D (Stable Fast 3D), and audio (Stable Audio 3.0), making Stability the broadest open generative media platform.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="sources">
+      <ul>
+        <li><a href="https://stability.ai/news-updates/introducing-stable-diffusion-3-5" target="_blank">Stable Diffusion 3.5 — stability.ai</a></li>
+        <li><a href="https://techcrunch.com/2026/05/20/stability-ai-release-a-new-audio-model-that-can-create-six-minute-songs/" target="_blank">Stable Audio 3.0 — TechCrunch</a></li>
+        <li><a href="https://www.novareviewhub.com/news/stable-diffusion-4-announcement" target="_blank">Stable Diffusion 4 announced — NovaReviewHub</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>

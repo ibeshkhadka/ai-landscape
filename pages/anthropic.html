@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic — AI Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e5f0f7;
+    color: #1f2937;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  a { color: #0f4c81; text-decoration: none; }
+  .back { display: inline-block; margin-bottom: 20px; font-size: 12px; color: #475569; }
+  .back:hover { color: #0f172a; }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+  .subtitle { font-size: 13px; color: #475569; margin-bottom: 30px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .meta-tag { font-size: 10px; padding: 4px 9px; border-radius: 4px; background: #eff6ff; color: #0f4c81; border: 1px solid rgba(13,110,253,0.25); }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 10px; }
+  .card h3 { font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 6px; }
+  .card p, .card li { font-size: 12px; color: #374151; line-height: 1.6; }
+  .card ul { padding-left: 18px; }
+  .sources { font-size: 11px; color: #6b7280; }
+  .sources a { color: #6b7280; }
+  .type-tag { font-size: 9px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; font-weight: 500; letter-spacing: 0.3px; vertical-align: middle; display: inline-block; }
+  .type-tag.llm { background: rgba(139,92,246,0.12); color: #7c3aed; border: 1px solid rgba(139,92,246,0.3); }
+  .type-tag.vlm { background: rgba(59,130,246,0.12); color: #2563eb; border: 1px solid rgba(59,130,246,0.3); }
+  .type-tag.image { background: rgba(22,163,148,0.12); color: #0f766e; border: 1px solid rgba(22,163,148,0.3); }
+  .type-tag.video { background: rgba(13,148,136,0.12); color: #0d9488; border: 1px solid rgba(13,148,136,0.3); }
+  .type-tag.audio { background: rgba(234,88,12,0.12); color: #c2410c; border: 1px solid rgba(234,88,12,0.3); }
+  .type-tag.d3d { background: rgba(217,119,6,0.12); color: #b45309; border: 1px solid rgba(217,119,6,0.3); }
+  .type-tag.voice { background: rgba(219,39,119,0.12); color: #be185d; border: 1px solid rgba(219,39,119,0.3); }
+  .type-tag.embedding { background: rgba(100,116,139,0.12); color: #475569; border: 1px solid rgba(100,116,139,0.3); }
+  .type-tag.search { background: rgba(202,138,4,0.12); color: #a16207; border: 1px solid rgba(202,138,4,0.3); }
+  .type-tag.agent { background: rgba(124,58,237,0.12); color: #7c3aed; border: 1px solid rgba(124,58,237,0.25); }
+  .type-tag.fine-tune { background: rgba(8,145,178,0.12); color: #0e7490; border: 1px solid rgba(8,145,178,0.3); }
+  .type-tag.infra { background: rgba(148,163,184,0.2); color: #475569; border: 1px solid rgba(148,163,184,0.35); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../ai-landscape.html">← Back</a>
+  <h1>Anthropic</h1>
+    <div class="subtitle">Claude Fable 5 frontier. Opus 4.8 coding agents. Sonnet 4.6 production. Haiku 4.5 lightweight.</div>
+  <div class="meta">
+    <span class="meta-tag">Fable 5</span>
+    <span class="meta-tag">Opus 4.8</span>
+    <span class="meta-tag">Sonnet 4.6</span>
+    <span class="meta-tag">Haiku 4.5</span>
+    <span class="meta-tag closed">CLOSED</span>
+  </div>
+
+  <section>
+    <h2>Latest Models and Products</h2>
+    <div class="card">
+      <h3>Claude Fable 5 <span class="type-tag llm">LLM</span></h3>
+      <p>Public Mythos-class frontier model released June 9, 2026. Top-tier reasoning, coding, and agentic performance. $10/$50 per MTok input/output. Represents the current frontier Claude generation.</p>
+    </div>
+    <div class="card">
+      <h3>Claude Opus 4.8 <span class="type-tag llm">LLM</span></h3>
+      <p>Advanced reasoning model released May 28, 2026 with 1M context window. Stronger across coding, agentic tasks, and multi-step tool orchestration. Dynamic Workflows feature enables orchestration of up to 1,000 parallel subagents.</p>
+    </div>
+    <div class="card">
+      <h3>Claude Sonnet 4.6 <span class="type-tag llm">LLM</span></h3>
+      <p>Balanced production model with near-Opus performance at lower cost. Strong tool use, computer use, and long-context reasoning for everyday Claude-powered products.</p>
+    </div>
+    <div class="card">
+      <h3>Claude Haiku 4.5 <span class="type-tag llm">LLM</span></h3>
+      <p>Fastest and most cost-effective Claude model. Optimized for high-throughput tasks, realtime chatbots, and lightweight agentic workflows. Ideal for latency-sensitive and budget-conscious production deployments.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Activity and Context</h2>
+    <div class="card">
+      <p>Anthropic released Claude Fable 5 on June 9, 2026 — the public Mythos-class model. Opus 4.8 followed in May with Dynamic Workflows. The model lineup now spans five tiers: Fable 5 (frontier), Opus 4.8 (premium), Sonnet 4.6 (production), and Haiku 4.5 (lightweight).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="sources">
+      <ul>
+        <li><a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank">Introducing Claude Opus 4.8 — anthropic.com</a></li>
+        <li><a href="https://www.anthropic.com/claude/mythos" target="_blank">Claude Fable 5 product page — anthropic.com</a></li>
+        <li><a href="https://tygartmedia.com/claude-updates-june-2026" target="_blank">Claude Updates June 2026 — Tygart Media</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>

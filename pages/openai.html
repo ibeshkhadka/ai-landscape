@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI — AI Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e5f0f7;
+    color: #1f2937;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  a { color: #0f4c81; text-decoration: none; }
+  .back { display: inline-block; margin-bottom: 20px; font-size: 12px; color: #475569; }
+  .back:hover { color: #0f172a; }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+  .subtitle { font-size: 13px; color: #475569; margin-bottom: 30px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .meta-tag { font-size: 10px; padding: 4px 9px; border-radius: 4px; background: #eff6ff; color: #0f4c81; border: 1px solid rgba(13,110,253,0.25); }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 10px; }
+  .card h3 { font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 6px; }
+  .card p, .card li { font-size: 12px; color: #374151; line-height: 1.6; }
+  .card ul { padding-left: 18px; }
+  .sources { font-size: 11px; color: #6b7280; }
+  .sources a { color: #6b7280; }
+  .type-tag { font-size: 9px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; font-weight: 500; letter-spacing: 0.3px; vertical-align: middle; display: inline-block; }
+  .type-tag.llm { background: rgba(139,92,246,0.12); color: #7c3aed; border: 1px solid rgba(139,92,246,0.3); }
+  .type-tag.vlm { background: rgba(59,130,246,0.12); color: #2563eb; border: 1px solid rgba(59,130,246,0.3); }
+  .type-tag.image { background: rgba(22,163,148,0.12); color: #0f766e; border: 1px solid rgba(22,163,148,0.3); }
+  .type-tag.video { background: rgba(13,148,136,0.12); color: #0d9488; border: 1px solid rgba(13,148,136,0.3); }
+  .type-tag.audio { background: rgba(234,88,12,0.12); color: #c2410c; border: 1px solid rgba(234,88,12,0.3); }
+  .type-tag.d3d { background: rgba(217,119,6,0.12); color: #b45309; border: 1px solid rgba(217,119,6,0.3); }
+  .type-tag.voice { background: rgba(219,39,119,0.12); color: #be185d; border: 1px solid rgba(219,39,119,0.3); }
+  .type-tag.embedding { background: rgba(100,116,139,0.12); color: #475569; border: 1px solid rgba(100,116,139,0.3); }
+  .type-tag.search { background: rgba(202,138,4,0.12); color: #a16207; border: 1px solid rgba(202,138,4,0.3); }
+  .type-tag.agent { background: rgba(124,58,237,0.12); color: #7c3aed; border: 1px solid rgba(124,58,237,0.25); }
+  .type-tag.fine-tune { background: rgba(8,145,178,0.12); color: #0e7490; border: 1px solid rgba(8,145,178,0.3); }
+  .type-tag.infra { background: rgba(148,163,184,0.2); color: #475569; border: 1px solid rgba(148,163,184,0.35); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../ai-landscape.html">← Back</a>
+  <h1>OpenAI</h1>
+    <div class="subtitle">GPT-5.5 family: daily driver + frontier. GPT-5.4: production to edge. Realtime voice.</div>
+  <div class="meta">
+    <span class="meta-tag">GPT-5.5</span>
+    <span class="meta-tag">GPT-5.4</span>
+    <span class="meta-tag closed">CLOSED</span>
+  </div>
+
+  <section>
+    <h2>Latest Models and Products</h2>
+    <div class="card">
+      <h3>GPT-5.5 <span class="type-tag llm">LLM</span></h3>
+      <p>GPT-5.5 Instant (May 5, 2026) is the default daily driver — smarter, more concise with 52.5% fewer hallucinated claims. GPT-5.5 "Spud" (Apr 23, 2026) is the frontier tier scoring 88.7% on SWE-bench Verified for complex professional work. Both share a 1M context window and computer-use capabilities.</p>
+    </div>
+    <div class="card">
+      <h3>GPT-5.4 <span class="type-tag llm">LLM</span></h3>
+      <p>GPT-5.4 (Mar 5, 2026) introduced native computer-use and 1M context window. GPT-5.4 Mini is the cost-efficient variant for high-volume production workloads. GPT-5.4 Nano is a tiny distilled variant for edge, mobile, and on-device deployment.</p>
+    </div>
+    <div class="card">
+      <h3>GPT-Realtime-2 <span class="type-tag voice">VOICE</span></h3>
+      <p>Low-latency voice model for realtime conversation and voice-first agent interfaces.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Activity and Context</h2>
+    <div class="card">
+      <p>OpenAI's GPT-5.5 family (Instant + Spud) covers daily driver and frontier tiers, while GPT-5.4 spans base, Mini, and Nano for production through edge deployment. The portfolio also includes GPT-Realtime-2 for voice. Over eight variants shipped in under a year across reasoning, coding, voice, and edge tracks.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="sources">
+      <ul>
+        <li><a href="http://openai.com/index/gpt-5-5-instant" target="_blank">GPT-5.5 Instant — openai.com</a></li>
+        <li><a href="https://openai.com/index/introducing-gpt-5-5" target="_blank">Introducing GPT-5.5 — openai.com</a></li>
+        <li><a href="https://help.openai.com/en/articles/9624314-model-release-notes" target="_blank">Model Release Notes — OpenAI Help Center</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>
