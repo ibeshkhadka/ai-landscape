@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft — AI Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0f;
+    color: #e4e4e7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 60px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: #60a5fa; text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #93c5fd; }
+  .back {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-bottom: 32px; font-size: 13px; color: #52525b;
+    font-family: 'JetBrains Mono', monospace;
+    transition: color 0.2s;
+  }
+  .back:hover { color: #e4e4e7; }
+  h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; color: #fafafa; letter-spacing: -1px; line-height: 1.1; }
+  .subtitle { font-size: 16px; color: #71717a; margin-bottom: 32px; line-height: 1.6; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .meta-tag { font-size: 11px; padding: 5px 12px; border-radius: 6px; background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.06); font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+  .meta-tag.open { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.2); }
+  .meta-tag.closed { background: rgba(239,68,68,0.1); color: #f87171; border-color: rgba(239,68,68,0.2); }
+  .meta-tag.enterprise { background: rgba(59,130,246,0.1); color: #60a5fa; border-color: rgba(59,130,246,0.2); }
+  section { margin-bottom: 48px; }
+  h2 { font-size: 11px; font-weight: 600; color: #52525b; margin-bottom: 16px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .card { background: #141418; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 24px; margin-bottom: 12px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .card:hover { border-color: rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .card h3 { font-size: 16px; font-weight: 700; color: #f4f4f5; margin-bottom: 8px; }
+  .card p, .card li { font-size: 14px; color: #a1a1aa; line-height: 1.7; }
+  .card ul { padding-left: 18px; }
+  .sources { font-size: 13px; color: #52525b; }
+  .sources a { color: #60a5fa; }
+  .sources a:hover { color: #93c5fd; }
+  .type-tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; margin-left: 8px; font-weight: 600; letter-spacing: 0.05em; vertical-align: middle; display: inline-block; }
+  .type-tag.llm { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+  .type-tag.vlm { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+  .type-tag.image { background: rgba(20,184,166,0.15); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.25); }
+  .type-tag.video { background: rgba(13,148,136,0.15); color: #2dd4bf; border: 1px solid rgba(13,148,136,0.25); }
+  .type-tag.audio { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.25); }
+  .type-tag.d3d { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+  .type-tag.voice { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.25); }
+  .type-tag.embedding { background: rgba(100,116,139,0.15); color: #94a3b8; border: 1px solid rgba(100,116,139,0.25); }
+  .type-tag.search { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+  .type-tag.agent { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+  .type-tag.fine-tune { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.25); }
+  .type-tag.infra { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back</a>
+  <h1>Microsoft</h1>
+  <div class="subtitle">MAI in-house model family. Copilot, GitHub Copilot, Azure AI Foundry.</div>
+  <div class="meta">
+    <span class="meta-tag">MAI-Thinking-1</span>
+    <span class="meta-tag">MAI-Code-1-Flash</span>
+    <span class="meta-tag">MAI-Image-2.5</span>
+    <span class="meta-tag">MAI-Voice-2</span>
+    <span class="meta-tag closed">CLOSED</span>
+    <span class="meta-tag enterprise">ENTERPRISE</span>
+  </div>
+
+  <section>
+    <h2>Latest Models and Products</h2>
+    <div class="card">
+      <h3>MAI-Thinking-1 <span class="type-tag llm">LLM</span></h3>
+      <p>Microsoft's first in-house reasoning model. 35B active parameters MoE architecture, 128K context window. Trained from scratch on clean data without distillation. Competitive with Claude Opus 4.6 on SWE-Bench Pro. Fine-tuned for McKinsey, outperformed GPT-5.5 at 10x better cost efficiency. Private preview in Microsoft Foundry as of Build 2026 (June 2, 2026).</p>
+    </div>
+    <div class="card">
+      <h3>MAI-Code-1-Flash <span class="type-tag llm">LLM</span></h3>
+      <p>Coding model integrated into GitHub Copilot and VS Code. Plans and reasons through complex coding tasks end-to-end. Optimized for token efficiency in the Copilot interaction model. Part of the seven-model MAI family announced at Build 2026.</p>
+    </div>
+    <div class="card">
+      <h3>MAI-Image-2.5, MAI-Voice-2, MAI-Transcribe-1.5 <span class="type-tag image">IMAGE</span></h3>
+      <p>Multimodal suite covering image generation, voice synthesis, and transcription. In preview on Microsoft Foundry. Positioned as in-house alternatives for Copilot and Azure AI services.</p>
+    </div>
+    <div class="card">
+      <h3>Project Polaris <span class="type-tag llm">LLM</span></h3>
+      <p>Coding model replacing GPT-4 Turbo in GitHub Copilot by August 2026. MoE architecture with Code Content Guarantee (IP indemnification). Fast, code-specialized completion engine (not a reasoning model).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Activity and Context</h2>
+    <div class="card">
+      <p>At Build 2026 (June 2), Microsoft announced seven in-house MAI models — the clearest signal yet of reducing OpenAI dependency. Mustafa Suleyman (CEO of Microsoft AI) leads the effort. The models are trained from scratch without distillation, emphasizing data provenance and IP indemnification for enterprise customers. Also announced: Azure Agent Mesh (multi-agent cloud infra, GA Q4 2026), MCP in M365 declarative agents (GA), and Windows as an agent platform with governed permissions for third-party agents. Microsoft continues to sell OpenAI models via Azure while building parallel in-house capability.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="sources">
+      <ul>
+        <li><a href="https://www.nguyen-ly-thanh.com/en/blog/microsoft-build-2026-mai-thinking-code-model-maker-2026" target="_blank">MAI-Thinking-1 and MAI-Code-1-Flash — Build 2026 analysis</a></li>
+        <li><a href="https://windowsforum.com/threads/microsoft-build-2026-mai-models-ai-agents-and-governance-for-the-next-app-layer.422356" target="_blank">Build 2026: Microsoft MAI models — Windows Forum</a></li>
+        <li><a href="https://tech-insider.org/microsoft-mai-in-house-ai-models-openai-2026/" target="_blank">Microsoft MAI strategy vs OpenAI — Tech Insider</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>

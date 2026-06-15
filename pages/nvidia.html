@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVIDIA — AI Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0f;
+    color: #e4e4e7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 60px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: #60a5fa; text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #93c5fd; }
+  .back {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-bottom: 32px; font-size: 13px; color: #52525b;
+    font-family: 'JetBrains Mono', monospace;
+    transition: color 0.2s;
+  }
+  .back:hover { color: #e4e4e7; }
+  h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; color: #fafafa; letter-spacing: -1px; line-height: 1.1; }
+  .subtitle { font-size: 16px; color: #71717a; margin-bottom: 32px; line-height: 1.6; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .meta-tag { font-size: 11px; padding: 5px 12px; border-radius: 6px; background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.06); font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+  .meta-tag.open { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.2); }
+  .meta-tag.closed { background: rgba(239,68,68,0.1); color: #f87171; border-color: rgba(239,68,68,0.2); }
+  .meta-tag.enterprise { background: rgba(59,130,246,0.1); color: #60a5fa; border-color: rgba(59,130,246,0.2); }
+  section { margin-bottom: 48px; }
+  h2 { font-size: 11px; font-weight: 600; color: #52525b; margin-bottom: 16px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .card { background: #141418; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 24px; margin-bottom: 12px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .card:hover { border-color: rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .card h3 { font-size: 16px; font-weight: 700; color: #f4f4f5; margin-bottom: 8px; }
+  .card p, .card li { font-size: 14px; color: #a1a1aa; line-height: 1.7; }
+  .card ul { padding-left: 18px; }
+  .sources { font-size: 13px; color: #52525b; }
+  .sources a { color: #60a5fa; }
+  .sources a:hover { color: #93c5fd; }
+  .type-tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; margin-left: 8px; font-weight: 600; letter-spacing: 0.05em; vertical-align: middle; display: inline-block; }
+  .type-tag.llm { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+  .type-tag.vlm { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+  .type-tag.image { background: rgba(20,184,166,0.15); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.25); }
+  .type-tag.video { background: rgba(13,148,136,0.15); color: #2dd4bf; border: 1px solid rgba(13,148,136,0.25); }
+  .type-tag.audio { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.25); }
+  .type-tag.d3d { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+  .type-tag.voice { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.25); }
+  .type-tag.embedding { background: rgba(100,116,139,0.15); color: #94a3b8; border: 1px solid rgba(100,116,139,0.25); }
+  .type-tag.search { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+  .type-tag.agent { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+  .type-tag.fine-tune { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.25); }
+  .type-tag.infra { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back</a>
+  <h1>NVIDIA</h1>
+  <div class="subtitle">Nemotron 3 open-weight family. Cosmos 3 physical AI. AI infrastructure backbone.</div>
+  <div class="meta">
+    <span class="meta-tag">Nemotron 3 Ultra</span>
+    <span class="meta-tag">Nemotron 3 Super</span>
+    <span class="meta-tag">Cosmos 3</span>
+    <span class="meta-tag open">OPEN</span>
+    <span class="meta-tag enterprise">ENTERPRISE</span>
+  </div>
+
+  <section>
+    <h2>Latest Models and Products</h2>
+    <div class="card">
+      <h3>Nemotron 3 Ultra <span class="type-tag llm">LLM</span></h3>
+      <p>Flagship 550B-parameter (55B active MoE) open-weight model. Released June 2026 at Computex. 300+ tokens/second inference, ~30% lower cost than competitors. Highest intelligence score (48) among US open-weight models per Artificial Analysis. Mamba2-Transformer Hybrid LatentMoE architecture with Multi-Token Prediction.</p>
+    </div>
+    <div class="card">
+      <h3>Nemotron 3 Super <span class="type-tag llm">LLM</span></h3>
+      <p>120B total / 12B active parameter model. Designed for collaborative agents, high-volume workloads, RAG, and complex instruction-following. First Nemotron model trained with NVFP4 quantization. Released March 2026.</p>
+    </div>
+    <div class="card">
+      <h3>Cosmos 3 <span class="type-tag vlm">VLM</span></h3>
+      <p>Open world foundation model for physical AI. First fully open omnimodel with native vision reasoning and multimodal generation across text, image, video, ambient sound, and action. Built on mixture-of-transformers architecture. Released May 2026 at GTC Taipei.</p>
+    </div>
+    <div class="card">
+      <h3>NVIDIA NIM <span class="type-tag infra">INFRA</span></h3>
+      <p>Inference microservices platform hosting 46 AI models from 12 publishers with free API access. Compatible with OpenAI API format. Hosts MiniMax, Qwen, Mistral, Llama, and NVIDIA's own models.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Activity and Context</h2>
+    <div class="card">
+      <p>NVIDIA is deepening its open model strategy through the Nemotron Coalition (with Mistral AI, Perplexity, Black Forest Labs, Cursor, LangChain, Reflection AI, Sarvam, Thinking Machines Lab) and the Cosmos Coalition (with Agile Robots, Black Forest Labs, Runway, Skild AI). The Nemotron Coalition's first project is a base model co-developed with Mistral AI that will underpin Nemotron 4. Also launched Alpamayo open models for autonomous vehicles at CES 2026, and announced Vera CPU and RTX Spark chip for personal AI computing.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="sources">
+      <ul>
+        <li><a href="https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b/modelcard" target="_blank">Nemotron 3 on NVIDIA Build</a></li>
+        <li><a href="https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai" target="_blank">Cosmos 3 announcement — NVIDIA Newsroom</a></li>
+        <li><a href="https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models" target="_blank">Nemotron Coalition — NVIDIA Newsroom</a></li>
+        <li><a href="https://www.nextplatform.com/code/2026/03/18/the-open-agentic-ai-world-according-to-nvidia/5209529" target="_blank">NVIDIA open agentic AI — The Next Platform</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>
