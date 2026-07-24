@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Model Tracker</title>
+<title>AI Landscape</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -193,46 +193,6 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Reload Button */
-  .reload-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 20px;
-    padding: 10px 18px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.03);
-    color: #d4d4d8;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-  .reload-button:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.25);
-    color: #ffffff;
-    transform: translateY(-1px);
-  }
-  .reload-button:active { transform: translateY(0); }
-  .reload-icon {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 1;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reload-button.spinning .reload-icon {
-    animation: reloadSpin 0.75s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-  @keyframes reloadSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
   /* Loading Overlay */
   .loading-overlay {
     position: fixed;
@@ -300,10 +260,6 @@
   <div class="header">
     <h1>AI Model Tracker</h1>
     <div class="subtitle">Companies and their latest models. Updated July 24, 2026.</div>
-    <button class="reload-button" onclick="reloadWithAnimation()">
-      <span class="reload-icon" aria-hidden="true">↻</span>
-      <span class="reload-label">Reload</span>
-    </button>
   </div>
 
   <div class="category-section cat-us">
@@ -456,14 +412,5 @@
 
   <div class="footer">July 24, 2026 · Open company pages for current model and source info.</div>
 </div>
-<script>
-  function reloadWithAnimation() {
-    const overlay = document.getElementById('loadingOverlay');
-    const button = document.querySelector('.reload-button');
-    if (button) button.classList.add('spinning');
-    overlay.classList.add('visible');
-    setTimeout(() => { location.reload(); }, 600);
-  }
-</script>
 </body>
 </html>
