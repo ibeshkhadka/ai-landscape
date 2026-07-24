@@ -412,5 +412,22 @@
 
   <div class="footer">Last updated: July 24, 2026 · Open company pages for current model and source info.</div>
 </div>
+<script>
+  (function () {
+    const overlay = document.getElementById('loadingOverlay');
+    if (!overlay) return;
+
+    function hideLoading() {
+      overlay.classList.remove('visible');
+    }
+
+    function showLoading() {
+      overlay.classList.add('visible');
+    }
+
+    window.addEventListener('pageshow', hideLoading);
+    window.addEventListener('beforeunload', showLoading);
+  })();
+</script>
 </body>
 </html>
