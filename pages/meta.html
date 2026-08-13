@@ -2,119 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meta — AI Landscape</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #0a0a0f;
-    color: #e4e4e7;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    min-height: 100vh;
-    padding: 60px 24px 80px;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    overflow-x: hidden;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    top: -200px; left: -200px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
-  a { color: #60a5fa; text-decoration: none; transition: color 0.2s; }
-  a:hover { color: #93c5fd; }
-  .back {
-    display: inline-flex; align-items: center; gap: 4px;
-    margin-bottom: 32px; font-size: 13px; color: #52525b;
-    font-family: 'JetBrains Mono', monospace;
-    transition: color 0.2s;
-  }
-  .back:hover { color: #e4e4e7; }
-  h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; color: #fafafa; letter-spacing: -1px; line-height: 1.1; }
-  .subtitle { font-size: 16px; color: #71717a; margin-bottom: 32px; line-height: 1.6; }
-  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
-  .meta-tag { font-size: 11px; padding: 5px 12px; border-radius: 6px; background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.06); font-weight: 500; font-family: 'JetBrains Mono', monospace; }
-  .meta-tag.open { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.2); }
-  .meta-tag.closed { background: rgba(239,68,68,0.1); color: #f87171; border-color: rgba(239,68,68,0.2); }
-  .meta-tag.enterprise { background: rgba(59,130,246,0.1); color: #60a5fa; border-color: rgba(59,130,246,0.2); }
-  section { margin-bottom: 48px; }
-  h2 { font-size: 11px; font-weight: 600; color: #52525b; margin-bottom: 16px; letter-spacing: 0.12em; text-transform: uppercase; }
-  .card { background: #141418; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 24px; margin-bottom: 12px; transition: border-color 0.2s, box-shadow 0.2s; }
-  .card:hover { border-color: rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-  .card h3 { font-size: 16px; font-weight: 700; color: #f4f4f5; margin-bottom: 8px; }
-  .card p, .card li { font-size: 14px; color: #a1a1aa; line-height: 1.7; }
-  .card ul { padding-left: 18px; }
-  .sources { font-size: 13px; color: #52525b; }
-  .sources a { color: #60a5fa; }
-  .sources a:hover { color: #93c5fd; }
-  .type-tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; margin-left: 8px; font-weight: 600; letter-spacing: 0.05em; vertical-align: middle; display: inline-block; }
-  .type-tag.llm { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
-  .type-tag.vlm { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
-  .type-tag.image { background: rgba(20,184,166,0.15); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.25); }
-  .type-tag.video { background: rgba(13,148,136,0.15); color: #2dd4bf; border: 1px solid rgba(13,148,136,0.25); }
-  .type-tag.audio { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.25); }
-  .type-tag.d3d { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
-  .type-tag.voice { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.25); }
-  .type-tag.embedding { background: rgba(100,116,139,0.15); color: #94a3b8; border: 1px solid rgba(100,116,139,0.25); }
-  .type-tag.search { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
-  .type-tag.agent { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
-  .type-tag.fine-tune { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.25); }
-  .type-tag.infra { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
-</style>
+<meta http-equiv="refresh" content="0; url=company.html?company=meta">
+<title>Redirecting — AI Model Tracker</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-  <a class="back" href="../index.html">← Back</a>
-  <h1>Meta — Llama</h1>
-  <div class="subtitle">Llama 4 open-weight multimodal. Muse Image and Muse Video generative media. Muse Spark 1.1 personal intelligence.</div>
-  <div class="meta">
-    <span class="meta-tag">Llama 4</span>
-    <span class="meta-tag open">OPEN</span>
-  </div>
-
-  <section>
-    <h2>Latest Models and Products</h2>
-    <div class="card">
-      <h3>Llama 4 <span class="type-tag vlm">VLM</span></h3>
-      <p>Natively multimodal open-weight family. Maverick is the mid-size variant with strong image and text understanding. Scout is the small, long-context variant suited to edge and single-GPU deployments.</p>
-    </div>
-    <div class="card">
-      <h3>Muse Image <span class="type-tag image">IMAGE</span></h3>
-      <p>Generative image model released July 7, 2026. Instruction-faithful editing, multi-reference composition, and social context drawn from Instagram. Positioned as Meta’s next-gen consumer and creator image model.</p>
-    </div>
-    <div class="card">
-      <h3>Muse Video <span class="type-tag video">VIDEO</span></h3>
-      <p>Generative video model released July 7, 2026 with native audio support. Designed for visual fidelity across short-form and social video.</p>
-    </div>
-    <div class="card">
-      <h3>Muse Spark 1.1 <span class="type-tag agent">AGENT</span></h3>
-      <p>Personal AI layer announced July 9, 2026 built toward personal superintelligence. Integrates across Meta apps and devices for personalized assistance, memory, and agentic workflows.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Recent Activity and Context</h2>
-    <div class="card">
-      <p>Meta is expanding beyond Llama into generative media and personal AI. After launching Llama 4 as an open multimodal base, the July 2026 releases add Muse Image, Muse Video, and Muse Spark 1.1 as productized applications of Meta’s research. Sam 3.1 also continues as the real-time video detection/tracking offering from Meta AI research.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Sources</h2>
-    <div class="sources">
-      <ul>
-        <li><a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence" target="_blank">Llama 4 — Meta AI</a></li>
-        <li><a href="https://ai.meta.com/blog" target="_blank">AI at Meta blog</a></li>
-        <li><a href="https://huggingface.co/meta-llama" target="_blank">Meta Llama — Hugging Face</a></li>
-      </ul>
-    </div>
-  </section>
+<div class="company-container">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#71717a;margin-top:40px">
+    Redirecting to the new company page&hellip;
+    <a href="company.html?company=meta">Click here if nothing happens.</a>
+  </p>
 </div>
+<script>window.location.replace('company.html?company=meta');</script>
 </body>
 </html>

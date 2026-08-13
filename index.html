@@ -3,252 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Landscape</title>
+<title>AI Model Tracker — AI Landscape</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #0a0a0f;
-    color: #e4e4e7;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    min-height: 100vh;
-    padding: 72px 24px 60px;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    overflow-x: hidden;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    top: -200px; left: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  body::after {
-    content: '';
-    position: fixed;
-    bottom: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-
-  .header { text-align: center; margin-bottom: 72px; }
-  .header h1 {
-    font-size: 48px; font-weight: 800;
-    letter-spacing: -2px;
-    margin-bottom: 16px;
-    line-height: 1;
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 40%, #f472b6 70%, #fbbf24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .header .subtitle {
-    font-size: 16px; color: #71717a;
-    max-width: 440px; margin: 0 auto;
-    line-height: 1.7;
-  }
-
-  .category-section { margin-bottom: 64px; }
-  .category-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .category-header h2 {
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .category-line { flex: 1; height: 1px; }
-  .badge {
-    font-size: 10px; padding: 4px 12px; border-radius: 100px;
-    font-weight: 600; letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .cat-us .category-header h2 { color: #38bdf8; }
-  .cat-us .category-line { background: linear-gradient(90deg, rgba(56,189,248,0.3), transparent); }
-  .cat-us .badge { background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.2); }
-
-  .cat-europe .category-header h2 { color: #fbbf24; }
-  .cat-europe .category-line { background: linear-gradient(90deg, rgba(251,191,36,0.3), transparent); }
-  .cat-europe .badge { background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
-
-  .cat-china .category-header h2 { color: #fb7185; }
-  .cat-china .category-line { background: linear-gradient(90deg, rgba(251,113,133,0.3), transparent); }
-  .cat-china .badge { background: rgba(251,113,133,0.1); color: #fb7185; border: 1px solid rgba(251,113,133,0.2); }
-
-  .cat-infra .category-header h2 { color: #a78bfa; }
-  .cat-infra .category-line { background: linear-gradient(90deg, rgba(167,139,250,0.3), transparent); }
-  .cat-infra .badge { background: rgba(167,139,250,0.1); color: #a78bfa; border: 1px solid rgba(167,139,250,0.2); }
-
-  .companies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 12px;
-  }
-
-  .company-card {
-    background: #141418;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 14px;
-    padding: 24px;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .company-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0;
-    width: 3px;
-    background: var(--card-accent);
-    opacity: 0.6;
-    transition: opacity 0.3s;
-  }
-  .company-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, var(--card-accent), transparent 80%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .company-card:hover {
-    border-color: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 60px var(--card-glow);
-  }
-  .company-card:hover::before { opacity: 1; }
-  .company-card:hover::after { opacity: 0.5; }
-  .company-card:hover .company-name { color: #ffffff; }
-
-  .company-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-  .company-name {
-    font-size: 16px; font-weight: 700; color: #d4d4d8;
-    line-height: 1.3; transition: color 0.3s;
-  }
-  .country-flag { font-size: 18px; line-height: 1; }
-  .company-tagline {
-    font-size: 14px;
-    color: #a1a1aa;
-    margin-bottom: 16px;
-    line-height: 1.6;
-  }
-  .company-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .meta-tag {
-    font-size: 11px; padding: 4px 10px; border-radius: 6px;
-    font-weight: 500;
-    font-family: 'JetBrains Mono', monospace;
-    background: rgba(255,255,255,0.04);
-    color: #a1a1aa;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-  .meta-tag.open { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.2); }
-  .meta-tag.closed { background: rgba(239,68,68,0.1); color: #f87171; border-color: rgba(239,68,68,0.2); }
-  .meta-tag.enterprise { background: rgba(59,130,246,0.1); color: #60a5fa; border-color: rgba(59,130,246,0.2); }
-  .meta-tag.agent { background: rgba(139,92,246,0.1); color: #a78bfa; border-color: rgba(139,92,246,0.2); }
-  .retention-hook {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    font-size: 12px;
-    color: #52525b;
-    line-height: 1.6;
-  }
-
-  .cat-us { --card-accent: #38bdf8; --card-glow: rgba(56,189,248,0.04); }
-  .cat-europe { --card-accent: #fbbf24; --card-glow: rgba(251,191,36,0.04); }
-  .cat-china { --card-accent: #fb7185; --card-glow: rgba(251,113,133,0.04); }
-  .cat-infra { --card-accent: #a78bfa; --card-glow: rgba(167,139,250,0.04); }
-
-  .footer {
-    text-align: center;
-    margin-top: 80px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    font-size: 12px;
-    color: #3f3f46;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  /* Loading Overlay */
-  .loading-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 10, 15, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-  }
-  .loading-overlay.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .loader {
-    position: relative;
-    width: 48px;
-    height: 48px;
-  }
-  .loader::before,
-  .loader::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.8;
-  }
-  .loader::before {
-    inset: 0;
-    border: 2px solid rgba(255,255,255,0.08);
-  }
-  .loader::after {
-    inset: 0;
-    border: 2px solid transparent;
-    border-left-color: #a78bfa;
-    border-right-color: #60a5fa;
-    animation: loaderSpin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-  @keyframes loaderSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .loading-text {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: #71717a;
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="loading-overlay" id="loadingOverlay">
@@ -257,171 +15,185 @@
 </div>
 
 <div class="container">
+  <div class="topbar">
+    <div class="brand">AI <span>Model Tracker</span></div>
+    <nav class="topnav">
+      <a href="index.html" class="active">Companies</a>
+    </nav>
+  </div>
+
   <div class="header">
     <h1>AI Model Tracker</h1>
-    <div class="subtitle">Companies and their latest models. Updated July 24, 2026.</div>
+    <div class="subtitle" id="subtitle">Companies and their latest models.</div>
   </div>
 
-  <div class="category-section cat-us">
-    <div class="category-header">
-      <h2>America</h2>
-      <div class="category-line"></div>
-      <span class="badge">America</span>
+  <div class="controls">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      <input type="text" id="searchInput" placeholder="Search companies, models, tags..." autocomplete="off">
     </div>
-    <div class="companies-grid">
-      <a class="company-card" href="pages/openai.html">
-        <div class="company-header"><div class="company-name">OpenAI</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">GPT-5.6 family: Sol frontier, Terra everyday, Luna efficient. Realtime voice.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag">GPT-5.6 Sol</span><span class="meta-tag">GPT-5.6 Terra</span><span class="meta-tag">GPT-5.6 Luna</span></div>
-        <div class="retention-hook">Market definition is more important than best-in-class benchmarks.</div>
-      </a>
-      <a class="company-card" href="pages/anthropic.html">
-        <div class="company-header"><div class="company-name">Anthropic</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Sonnet 5 default across plans. Fable 5 frontier. Opus 4.8 premium. Haiku 4.5 lightweight.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag">Claude Sonnet 5</span><span class="meta-tag">Claude Fable 5</span><span class="meta-tag">Claude Opus 4.8</span></div>
-        <div class="retention-hook">Alignment is a product, not a research footnote here.</div>
-      </a>
-      <a class="company-card" href="pages/google-ai.html">
-        <div class="company-header"><div class="company-name">Google AI</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Gemini 3.5 Flash daily driver. Gemini 3.1 Pro reasoning. Gemini Omni end-to-end multimodal.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag enterprise">ENTERPRISE</span><span class="meta-tag">Gemini 3.5 Flash</span><span class="meta-tag">Gemini 3.1 Pro</span></div>
-        <div class="retention-hook">Their moat is integration, not model publishing.</div>
-      </a>
-      <a class="company-card" href="pages/meta.html">
-        <div class="company-header"><div class="company-name">Meta</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Llama 4 open-weight multimodal. Muse Image, Muse Video, Muse Spark 1.1.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Llama 4</span><span class="meta-tag">Muse</span></div>
-        <div class="retention-hook">Openness is the strategy, not an accident.</div>
-      </a>
-      <a class="company-card" href="pages/microsoft.html">
-        <div class="company-header"><div class="company-name">Microsoft</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">MAI in-house model family. Copilot, GitHub Copilot, Azure AI Foundry, Azure Agent Mesh.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag enterprise">ENTERPRISE</span><span class="meta-tag">MAI-Thinking-1</span><span class="meta-tag">Project Polaris</span></div>
-        <div class="retention-hook">Building in-house AI to reduce OpenAI dependency.</div>
-      </a>
-      <a class="company-card" href="pages/nvidia.html">
-        <div class="company-header"><div class="company-name">NVIDIA</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Nemotron 3 Ultra open-weight. Cosmos 3 physical AI. AI infrastructure.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag enterprise">ENTERPRISE</span><span class="meta-tag">Nemotron 3</span><span class="meta-tag">Cosmos 3</span></div>
-        <div class="retention-hook">From GPUs to open models to physical AI.</div>
-      </a>
-      <a class="company-card" href="pages/grok.html">
-        <div class="company-header"><div class="company-name">xAI (Grok)</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Grok 5 advance preview. Grok 4.3 production chat. Grok 4.20 multi-agent reasoning. Grok Imagine Video 1.5.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag">Grok 5</span><span class="meta-tag">Grok 4.3</span><span class="meta-tag">Grok 4.20</span></div>
-        <div class="retention-hook">Multi-agent inference is the architecture bet.</div>
-      </a>
-    </div>
+    <span class="chip-divider"></span>
+    <button class="chip type-text" data-type="text">Text</button>
+    <button class="chip type-image" data-type="image">Image</button>
+    <button class="chip type-audio" data-type="audio">Audio</button>
+    <button class="chip type-video" data-type="video">Video</button>
   </div>
 
-  <div class="category-section cat-europe">
-    <div class="category-header">
-      <h2>Europe</h2>
-      <div class="category-line"></div>
-      <span class="badge">Europe</span>
-    </div>
-    <div class="companies-grid">
-      <a class="company-card" href="pages/mistral.html">
-        <div class="company-header"><div class="company-name">Mistral</div><div class="country-flag">🇫🇷</div></div>
-        <div class="company-tagline">Medium 3.5 production flagship. Small 4 unified multimodal. OCR 4, Voxtral TTS.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Mistral Medium 3.5</span><span class="meta-tag">Mistral Small 4</span></div>
-        <div class="retention-hook">Small capable models, not brute force.</div>
-      </a>
-      <a class="company-card" href="pages/stability-ai.html">
-        <div class="company-header"><div class="company-name">Stability AI</div><div class="country-flag">🇬🇧</div></div>
-        <div class="company-tagline">Stable Diffusion 4 announced. SD 3.5 current. Video Diffusion. Fast 3D. Audio 3.0.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">SD 4</span><span class="meta-tag">SD 3.5</span><span class="meta-tag">Video Diffusion</span></div>
-        <div class="retention-hook">The model outlasts the leadership drama.</div>
-      </a>
-    </div>
+  <div class="stats" id="stats"></div>
+
+  <div id="sections"></div>
+
+  <div class="empty-state" id="emptyState">
+    No companies match your filters. Try clearing the search or a filter.
   </div>
 
-  <div class="category-section cat-china">
-    <div class="category-header">
-      <h2>China</h2>
-      <div class="category-line"></div>
-      <span class="badge">China</span>
-    </div>
-    <div class="companies-grid">
-      <a class="company-card" href="pages/deepseek.html">
-        <div class="company-header"><div class="company-name">DeepSeek</div><div class="country-flag">🇨🇳</div></div>
-        <div class="company-tagline">V4 open-weight flagship. R1 reasoning. Long context and low-cost serving.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">DeepSeek-V4</span><span class="meta-tag">DeepSeek-R1</span></div>
-        <div class="retention-hook">Cost-efficient reasoning is the niche.</div>
-      </a>
-      <a class="company-card" href="pages/alibaba.html">
-        <div class="company-header"><div class="company-name">Alibaba (Qwen)</div><div class="country-flag">🇨🇳</div></div>
-        <div class="company-tagline">Qwen 3.7 Max frontier. Qwen 3.7 Plus multimodal. Qwen 3.5 open-weight family. QwQ reasoning.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag open">OPEN</span><span class="meta-tag">Qwen 3.7 Max</span><span class="meta-tag">Qwen 3.5</span></div>
-        <div class="retention-hook">Full-stack integration from chips to apps.</div>
-      </a>
-      <a class="company-card" href="pages/zhipu.html">
-        <div class="company-header"><div class="company-name">Zhipu AI (智谱)</div><div class="country-flag">🇨🇳</div></div>
-        <div class="company-tagline">GLM-5 coding flagship. GLM-5V-Turbo vision coding. AutoGLM agents.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">GLM-5</span><span class="meta-tag">GLM-5V-Turbo</span></div>
-        <div class="retention-hook">Academic credibility over hype cycles.</div>
-      </a>
-      <a class="company-card" href="pages/moonshot.html">
-        <div class="company-header"><div class="company-name">Moonshot AI</div><div class="country-flag">🇨🇳</div></div>
-        <div class="company-tagline">Kimi K3 latest frontier. Kimi K2.6 prior generation. Long-horizon coding and reasoning.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Kimi K3</span><span class="meta-tag">Kimi K2.6</span></div>
-        <div class="retention-hook">Context length is brand identity, not a benchmark.</div>
-      </a>
-      <a class="company-card" href="pages/manus.html">
-        <div class="company-header"><div class="company-name">Manus AI</div><div class="country-flag">🇸🇬</div></div>
-        <div class="company-tagline">General-purpose autonomous agent. Virtual computer, sub-agent orchestration, multi-step execution.</div>
-        <div class="company-meta"><span class="meta-tag closed">CLOSED</span><span class="meta-tag agent">AGENT</span><span class="meta-tag">Manus</span></div>
-        <div class="retention-hook">Autonomous agents are the product, not chat.</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="category-section cat-infra">
-    <div class="category-header">
-      <h2>Infrastructure</h2>
-      <div class="category-line"></div>
-      <span class="badge">Infrastructure</span>
-    </div>
-    <div class="companies-grid">
-      <a class="company-card" href="pages/huggingface.html">
-        <div class="company-header"><div class="company-name">Hugging Face</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Open model hub. Inference, datasets, agents.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Models Hub</span><span class="meta-tag">Inference API</span></div>
-        <div class="retention-hook">GitHub of AI models.</div>
-      </a>
-      <a class="company-card" href="pages/nousresearch.html">
-        <div class="company-header"><div class="company-name">NousResearch</div><div class="country-flag">🇺🇸</div></div>
-        <div class="company-tagline">Hermes 4 fine-tunes. DeepHermes 3 reasoning. Hermes Agent platform.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Hermes 4</span><span class="meta-tag">DeepHermes 3</span></div>
-        <div class="retention-hook">Fine-tune and tool-use specialists.</div>
-      </a>
-      <a class="company-card" href="pages/openrouter.html">
-        <div class="company-header"><div class="company-name">OpenRouter</div><div class="country-flag">🌍</div></div>
-        <div class="company-tagline">Unified API gateway. Model routing, fallbacks, cost optimization.</div>
-        <div class="company-meta"><span class="meta-tag open">OPEN</span><span class="meta-tag">Unified API</span><span class="meta-tag">Model Routing</span></div>
-        <div class="retention-hook">One API to route them all.</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="footer">Last updated: July 24, 2026 · Open company pages for current model and source info.</div>
+  <div class="footer" id="footer"></div>
 </div>
+
+<script src="data/companies.js"></script>
+<script src="data/media/image.js"></script>
+<script src="data/media/video.js"></script>
 <script>
-  (function () {
-    const overlay = document.getElementById('loadingOverlay');
-    if (!overlay) return;
+(function () {
+  'use strict';
+  var COMPANIES = window.AI_COMPANIES || [];
 
-    function hideLoading() {
-      overlay.classList.remove('visible');
+  // Merge image/video generation models (data/media/*) back into their companies
+  [window.AI_IMAGE_MODELS, window.AI_VIDEO_MODELS].forEach(function (group) {
+    if (!group) return;
+    Object.keys(group).forEach(function (slug) {
+      var c = COMPANIES.filter(function (x) { return x.slug === slug; })[0];
+      if (c) c.models = c.models.concat(group[slug]);
+    });
+  });
+  var REGIONS = {
+    us:     { label: 'America',        cls: 'cat-us' },
+    europe: { label: 'Europe',         cls: 'cat-europe' },
+    china:  { label: 'China',          cls: 'cat-china' },
+    infra:  { label: 'Infrastructure', cls: 'cat-infra' }
+  };
+  // Model-kind groups for the Text / Image / Audio / Video filter
+  var TYPE_GROUPS = {
+    text:  ['llm', 'vlm'],
+    image: ['image', 'd3d'],
+    audio: ['audio', 'voice'],
+    video: ['video']
+  };
+  // Media-only companies (all models are image/video/audio) are hidden unless
+  // their matching type filter is active
+  var MEDIA_TYPES = ['image', 'video', 'audio', 'voice', 'd3d'];
+  function isMediaOnly(c) {
+    return c.models.length > 0 && c.models.every(function (m) { return MEDIA_TYPES.indexOf(m.type) !== -1; });
+  }
+  var state = { q: '', type: null };
+
+  var fmtDate = function (iso) {
+    var d = new Date(iso + 'T00:00:00Z');
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  };
+
+  function companyMatches(c) {
+    if (state.type) {
+      if (!c.models.some(function (m) { return TYPE_GROUPS[state.type].indexOf(m.type) !== -1; })) return false;
+    } else if (isMediaOnly(c)) {
+      return false;
     }
-
-    function showLoading() {
-      overlay.classList.add('visible');
+    if (state.q) {
+      var q = state.q.toLowerCase();
+      var hay = (c.name + ' ' + c.tagline + ' ' + c.retention + ' ' +
+        c.tags.map(function (t) { return t.label; }).join(' ') + ' ' +
+        c.models.map(function (m) { return m.name + ' ' + m.desc; }).join(' ')).toLowerCase();
+      if (hay.indexOf(q) === -1) return false;
     }
+    return true;
+  }
 
-    window.addEventListener('pageshow', hideLoading);
-    window.addEventListener('beforeunload', showLoading);
-  })();
+  function renderStats() {
+    var open = COMPANIES.filter(function (c) { return c.tags.some(function (t) { return t.type === 'open'; }); }).length;
+    var closed = COMPANIES.filter(function (c) { return c.tags.some(function (t) { return t.type === 'closed'; }); }).length;
+    var agents = COMPANIES.filter(function (c) { return c.tags.some(function (t) { return t.type === 'agent'; }); }).length;
+    var models = COMPANIES.reduce(function (n, c) { return n + c.models.length; }, 0);
+    var latest = COMPANIES.reduce(function (max, c) {
+      c.models.forEach(function (m) { if (m.released && m.released > max) max = m.released; });
+      return max;
+    }, '');
+    document.getElementById('stats').innerHTML =
+      '<div class="stat"><b>' + COMPANIES.length + '</b> companies</div>' +
+      '<div class="stat"><b>' + models + '</b> models tracked</div>' +
+      '<div class="stat"><span class="dot open"></span><b>' + open + '</b> open</div>' +
+      '<div class="stat"><span class="dot closed"></span><b>' + closed + '</b> closed</div>' +
+      '<div class="stat"><span class="dot agent"></span><b>' + agents + '</b> agent platforms</div>' +
+      '<div class="stat">latest release <b>' + fmtDate(latest) + '</b></div>';
+  }
+
+  function renderSections() {
+    var container = document.getElementById('sections');
+    var empty = document.getElementById('emptyState');
+    var html = '';
+    var any = false;
+
+    Object.keys(REGIONS).forEach(function (key) {
+      var region = REGIONS[key];
+      var list = COMPANIES.filter(function (c) { return c.region === key && companyMatches(c); });
+      if (!list.length) return;
+      any = true;
+      html += '<div class="category-section ' + region.cls + '">' +
+        '<div class="category-header"><h2>' + region.label + '</h2>' +
+        '<div class="category-line"></div><span class="badge">' + region.label + '</span></div>' +
+        '<div class="companies-grid">' + list.map(cardHtml).join('') + '</div></div>';
+    });
+
+    container.innerHTML = html;
+    empty.style.display = any ? 'none' : 'block';
+  }
+
+  function cardHtml(c) {
+    var tags = c.tags.map(function (t) {
+      return '<span class="meta-tag ' + t.type + '">' + t.label + '</span>';
+    }).join('');
+    return '<a class="company-card" href="pages/company.html?company=' + encodeURIComponent(c.slug) + '" style="animation-delay:' + (Math.random() * 0.15).toFixed(2) + 's">' +
+      '<div class="company-header"><div class="company-name">' + c.name + '</div><div class="country-flag">' + c.flag + '</div></div>' +
+      '<div class="company-tagline">' + c.tagline + '</div>' +
+      '<div class="company-meta">' + tags + '</div>' +
+      '<div class="retention-hook">' + c.retention + '</div>' +
+      '<div class="updated-tag">updated ' + fmtDate(c.updated || '2026-08-13') + '</div>' +
+      '</a>';
+  }
+
+  function apply() {
+    renderSections();
+    var subtitle = document.getElementById('subtitle');
+    subtitle.innerHTML = state.q
+      ? 'Showing results for <b>&ldquo;' + escapeHtml(state.q) + '&rdquo;</b>'
+      : 'Companies and their latest models. Updated <b>' + fmtDate('2026-08-13') + '</b>.';
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Wire up controls
+  document.getElementById('searchInput').addEventListener('input', function (e) {
+    state.q = e.target.value.trim();
+    apply();
+  });
+
+  document.querySelectorAll('.chip[data-type]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.type = state.type === btn.dataset.type ? null : btn.dataset.type;
+      document.querySelectorAll('.chip[data-type]').forEach(function (b) { b.classList.toggle('active', b === btn && !!state.type); });
+      apply();
+    });
+  });
+
+  // Loading overlay on navigation
+  var overlay = document.getElementById('loadingOverlay');
+  window.addEventListener('pageshow', function () { overlay.classList.remove('visible'); });
+  window.addEventListener('beforeunload', function () { overlay.classList.add('visible'); });
+
+  renderStats();
+  apply();
+})();
 </script>
 </body>
 </html>

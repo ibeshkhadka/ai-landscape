@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company — AI Model Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loader"></div>
+  <div class="loading-text">Reloading</div>
+</div>
+
+<div class="company-container company-page">
+  <a class="back" href="../index.html">← Back to tracker</a>
+  <div id="content"></div>
+</div>
+
+<script src="../data/companies.js"></script>
+<script src="../data/media/image.js"></script>
+<script src="../data/media/video.js"></script>
+<script>
+(function () {
+  'use strict';
+  var COMPANIES = window.AI_COMPANIES || [];
+
+  // Merge image/video generation models (data/media/*) back into their companies
+  [window.AI_IMAGE_MODELS, window.AI_VIDEO_MODELS].forEach(function (group) {
+    if (!group) return;
+    Object.keys(group).forEach(function (slug) {
+      var c = COMPANIES.filter(function (x) { return x.slug === slug; })[0];
+      if (c) c.models = c.models.concat(group[slug]);
+    });
+  });
+  var REGION_ACCENT = { us: '#38bdf8', europe: '#fbbf24', china: '#fb7185', infra: '#a78bfa' };
+  var TYPE_LABEL = {
+    llm: 'LLM', vlm: 'VLM', image: 'IMAGE', video: 'VIDEO', audio: 'AUDIO',
+    d3d: '3D', voice: 'VOICE', embedding: 'EMBEDDING', search: 'SEARCH',
+    agent: 'AGENT', 'fine-tune': 'FINE-TUNE', infra: 'INFRA'
+  };
+
+  var slug = new URLSearchParams(window.location.search).get('company');
+  var company = COMPANIES.find(function (c) { return c.slug === slug; });
+
+  function fmtDate(iso) {
+    if (!iso) return '';
+    var d = new Date(iso + 'T00:00:00Z');
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  }
+
+  if (!company) {
+    document.getElementById('content').innerHTML =
+      '<h1>Company not found</h1>' +
+      '<p class="subtitle">This company is not in the tracker (yet).</p>' +
+      '<a class="back" href="../index.html">← Back to tracker</a>';
+    document.title = 'Not found — AI Model Tracker';
+    return;
+  }
+
+  document.title = company.name + ' — AI Model Tracker';
+
+  var tags = company.tags.map(function (t) {
+    return '<span class="meta-tag ' + t.type + '">' + t.label + '</span>';
+  }).join('');
+
+  var modelCards = company.models.map(function (m) {
+    var date = m.released ? '<span class="release-date">' + fmtDate(m.released) + '</span>' : '';
+    var type = TYPE_LABEL[m.type] ? '<span class="type-tag ' + m.type + '">' + TYPE_LABEL[m.type] + '</span>' : '';
+    return '<div class="card"><h3>' + m.name + type + date + '</h3><p>' + m.desc + '</p></div>';
+  }).join('');
+
+  // Timeline: models with release dates, newest first
+  var dated = company.models
+    .filter(function (m) { return m.released; })
+    .sort(function (a, b) { return a.released < b.released ? 1 : -1; });
+  var timeline = dated.length
+    ? '<div class="timeline">' + dated.map(function (m) {
+        return '<div class="timeline-item"><div class="t-date">' + fmtDate(m.released) + '</div>' +
+          '<div class="t-text"><b style="color:#e4e4e7">' + m.name + '</b> — ' + m.desc.split('.')[0] + '.</div></div>';
+      }).join('') + '</div>'
+    : '<div class="card"><p>No release dates recorded for this company yet.</p></div>';
+
+  var sources = company.sources.map(function (s) {
+    return '<li><a href="' + s.url + '" target="_blank" rel="noopener">' + s.label + '</a></li>';
+  }).join('');
+
+  document.getElementById('content').innerHTML =
+    '<h1>' + company.name + ' ' + company.flag + '</h1>' +
+    '<div class="subtitle">' + company.tagline + '</div>' +
+    '<div class="meta">' + tags + '</div>' +
+    '<div class="updated">updated ' + fmtDate(company.updated || '2026-08-13') + '</div>' +
+
+    '<section><h2>Latest Models and Products</h2>' + modelCards + '</section>' +
+
+    '<section><h2>Release Timeline</h2>' + timeline + '</section>' +
+
+    '<section><h2>Recent Activity and Context</h2>' +
+    '<div class="card"><p>' + company.activity + '</p></div></section>' +
+
+    '<section><h2>Retention Hook</h2>' +
+    '<div class="card retention-card" style="--retention-accent:' + (REGION_ACCENT[company.region] || '#a78bfa') + '">' +
+    '<p>' + company.retention + '</p></div></section>' +
+
+    '<section><h2>Sources</h2><div class="sources"><ul>' + sources + '</ul></div></section>';
+
+  // Loading overlay
+  var overlay = document.getElementById('loadingOverlay');
+  window.addEventListener('pageshow', function () { overlay.classList.remove('visible'); });
+  window.addEventListener('beforeunload', function () { overlay.classList.add('visible'); });
+})();
+</script>
+</body>
+</html>
