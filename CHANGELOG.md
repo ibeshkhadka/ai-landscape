@@ -1,5 +1,52 @@
 # AI Model Tracker Changelog
 
+## 2026-08-13 — Visit buttons point to exact model playgrounds
+- Re-targeted 64 model URLs from generic homepages/docs pages to the exact
+  playground or model deep-link where the model can be tried live:
+  - ChatGPT: `chatgpt.com/?model=gpt-5.6-sol|terra|luna`
+  - Google: `aistudio.google.com/prompts/new_chat?model=gemini-3.1-pro`,
+    `gemini-3.6-flash`, `gemini-3.5-flash-lite`, `gemini-3.5-flash-cyber`,
+    `gemma-4`, `gemini-3-pro-image` (Nano Banana)
+  - Open-weight models → HuggingChat: gpt-oss-120b, Phi-4,
+    DeepSeek-V4-Flash-0731, MiMo-V2.5(-Pro), Hermes-4.3-Seed-36B, DeepHermes 3,
+    Inkling(-Small)
+  - Microsoft → `playground.microsoft.ai` (MAI-Image-2.6, MAI-Voice,
+    MAI-Transcribe), GitHub Copilot (MAI Code)
+  - NVIDIA → per-model NIM playgrounds (Nemotron 3.5 Lightning, Nemotron 3
+    Ultra, Cosmos 3 Nano)
+  - Media: `playground.bfl.ai` (FLUX.2), `suno.com/create`,
+    `elevenlabs.io/app/speech-synthesis/text-to-speech`, `midjourney.com/imagine`,
+    `ideogram.ai/create`, `app.runwayml.com` (Gen-4.5, Aleph 2.0),
+    `klingai.com/app`, `nova.amazon.com`, `chat.z.ai` (GLM-5.2),
+    `chat.qwen.ai`, `www.doubao.com`, `aistudio.tencent.com/?model=hy3`,
+    `dashboard.cohere.com/playground`, `chat.mistral.ai`,
+    `agent.minimax.io`, `platform.stability.ai/sandbox` (+ `/audio`, `/3d`)
+- Verified with live HTTP checks: 55 URLs return 200 (chatgpt.com and
+  midjourney.com return 403 to bots but are the documented URLs).
+- Models with no standalone playground (Claude, Grok, Muse, GPT-Live-1,
+  GPT Image 2, Veo 3.1, Lyria, Gemini Omni Flash, embeddings, infra tools)
+  keep their product/app page where the model is selected in-app.
+
+## 2026-08-13 — Visit button URLs audited and corrected
+- Re-checked every model URL against its real destination and fixed 6 that
+  pointed at a generic company homepage instead of the model's page:
+  - Runway Gen-4.5 → runway.com/research/introducing-runway-gen-4.5
+  - Runway Aleph 2.0 → runway.com/product/ai-video-editor
+  - NeMo Switchyard → github.com/NVIDIA-NeMo/Switchyard
+  - Fish Audio S2 → fish.audio/s2/
+  - Ori Harness → openrouter.ai/blog/announcements/ori-harness/
+  - Command A+ → docs.cohere.com/docs/command-a-plus
+- Verified in browser: all 98 model cards render a Visit ↗ button with the
+  correct href (spot-checked Runway, NVIDIA, Cohere, Fish Audio, OpenRouter).
+
+## 2026-08-13 — Visit buttons on model cards
+- Every model now has a `url` field (98 models across `data/companies.js`,
+  `data/media/image.js`, `data/media/video.js`) pointing to its official page
+  (e.g. GPT-5.6 → chatgpt.com, Claude → claude.ai, gpt-oss → GitHub, Veo 3.1 →
+  DeepMind).
+- Company page model cards show a small purple **Visit ↗** button (top-right of
+  the card header) that opens the model's website in a new tab.
+
 ## 2026-08-13 — Company pages group models by kind
 - "Latest Models and Products" on each company page now groups models under
   colored headers: **Text / Image / Audio / Video / Other** (same kind mapping

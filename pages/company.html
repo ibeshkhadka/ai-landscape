@@ -91,7 +91,8 @@
     var cards = grouped[k].map(function (m) {
       var date = m.released ? '<span class="release-date">' + fmtDate(m.released) + '</span>' : '';
       var type = TYPE_LABEL[m.type] ? '<span class="type-tag ' + m.type + '">' + TYPE_LABEL[m.type] + '</span>' : '';
-      return '<div class="card"><h3>' + m.name + type + date + '</h3><p>' + m.desc + '</p></div>';
+      var link = m.url ? '<a class="model-link" href="' + m.url + '" target="_blank" rel="noopener">Visit &#8599;</a>' : '';
+      return '<div class="card"><h3>' + m.name + type + date + link + '</h3><p>' + m.desc + '</p></div>';
     }).join('');
     return '<h3 class="model-group-header kind-' + k + '">' + KIND_LABEL[k] + '</h3>' + cards;
   }).join('');

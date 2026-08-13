@@ -26,30 +26,35 @@ window.AI_COMPANIES = [
         name: "GPT-5.6 Sol",
         type: "llm",
         released: "2026-07-09",
+        url: "https://chatgpt.com/?model=gpt-5.6-sol",
         desc: "Current flagship. State-of-the-art coding, knowledge work, cybersecurity, and science; new SOTA on the Artificial Analysis Coding Agent Index and Terminal-Bench 2.1. Ultra mode for parallel multi-agent work. Aug 6 chat-tuned update adds a reasoning-effort slider; the Work/Codex version is unchanged. $2/$10 per MTok intro through Aug 31, then $3/$15."
       },
       {
         name: "GPT-5.6 Terra",
         type: "llm",
         released: "2026-07-09",
+        url: "https://chatgpt.com/?model=gpt-5.6-terra",
         desc: "Balanced family member for everyday work. Outperforms Claude Fable 5 at roughly 1/16th the estimated cost on broad intelligence tasks with lower latency. Price cut 20% on Jul 30."
       },
       {
         name: "GPT-5.6 Luna",
         type: "llm",
         released: "2026-07-09",
+        url: "https://chatgpt.com/?model=gpt-5.6-luna",
         desc: "Most cost-efficient variant for high-throughput production workloads. Price cut 80% on Jul 30. Default model for Free and Go users since Aug 6, with unlimited text chats and a Think button for harder questions."
       },
       {
         name: "GPT-Live-1 / GPT-Live-1 mini",
         type: "voice",
         released: "2026-07-08",
+        url: "https://chatgpt.com",
         desc: "Third-generation full-duplex voice models powering ChatGPT Voice 'Live' — listen and speak simultaneously, delegate deeper reasoning to frontier models (GPT-5.5 at launch) without breaking the flow. GPT-Live-1 default for paid users, mini for Free. SynthID watermarking added Jul 31."
       },
       {
         name: "gpt-oss-120b / gpt-oss-20b",
         type: "llm",
         released: "2025-08-05",
+        url: "https://huggingface.co/chat/models/openai/gpt-oss-120b",
         desc: "OpenAI's first open-weight language models since GPT-2. 117B/5.1B and 21B/3.6B active MoE, Apache 2.0, 128K context, MXFP4-quantized (120B fits one 80GB GPU, 20B in 16GB). Reasoning-effort control, full CoT, near o4-mini/o3-mini performance."
       }
     ],
@@ -79,24 +84,28 @@ window.AI_COMPANIES = [
         name: "Claude Fable 5",
         type: "llm",
         released: "2026-04-01",
+        url: "https://claude.ai",
         desc: "Frontier model for long-running agents, 1M context. Availability restricted for foreign users since June 2026 following a US government directive — a first for a frontier lab."
       },
       {
         name: "Claude Opus 5",
         type: "llm",
         released: "2026-07-24",
+        url: "https://claude.ai",
         desc: "Close to Fable 5 frontier intelligence at half the price ($5/$25 per MTok). 1M context, thinking on by default, most aligned model to date per Anthropic's behavioral audits. New default on Claude Max, strongest on Pro."
       },
       {
         name: "Claude Sonnet 5",
         type: "llm",
         released: "2026-06-30",
+        url: "https://claude.ai",
         desc: "Most agentic Sonnet yet — plans, browses, runs terminals autonomously near Opus-class levels. $2/$10 per MTok, made permanent on Aug 10. Default for Free and Pro plans."
       },
       {
         name: "Claude Haiku 4.5",
         type: "llm",
         released: "2025-10-01",
+        url: "https://claude.ai",
         desc: "Fastest model, near-frontier intelligence, 200k context. The cheap default for high-volume agent workloads."
       }
     ],
@@ -129,36 +138,42 @@ window.AI_COMPANIES = [
         name: "Gemini 3.1 Pro",
         type: "llm",
         released: "2026-02-19",
+        url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3.1-pro",
         desc: "Google's flagship for complex tasks — natively multimodal across text, audio, images, video, and entire code repositories. ARC-AGI-2 verified 77.1% (more than double Gemini 3 Pro). The only frontier model that processes video natively. Preview Feb 19, shipping across the Gemini app, API, Vertex AI, and Gemini Enterprise."
       },
       {
         name: "Gemini 3.6 Flash",
         type: "llm",
         released: "2026-07-21",
+        url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3.6-flash",
         desc: "Workhorse model for production agents: better coding, knowledge work, and multimodal performance with 17% less output token usage than 3.5 Flash, at lower cost. Replaced 3.5 Flash in the Gemini app and API."
       },
       {
         name: "Gemini 3.5 Flash-Lite",
         type: "llm",
         released: "2026-07-21",
+        url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3.5-flash-lite",
         desc: "Fastest, most cost-effective 3.5-class model — 350 output tokens/s at $0.30/$2.50 per MTok. Rolling out across Google Search for AI Overviews."
       },
       {
         name: "Gemini 3.5 Flash Cyber",
         type: "llm",
         released: "2026-07-21",
+        url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3.5-flash-cyber",
         desc: "First Gemini tuned for cybersecurity, paired with the CodeMender code security agent. Nearly matches much larger cyber models at Flash efficiency."
       },
       {
         name: "Gemma 4",
         type: "llm",
         released: "2026-04-02",
+        url: "https://aistudio.google.com/prompts/new_chat?model=gemma-4",
         desc: "Google's most capable open models — Apache 2.0, built from Gemini 3 research. Five sizes (E2B, E4B, 12B, 26B-A4B MoE, 31B dense), 256K context, 140+ languages, multimodal. 31B ranks #3 open model on the Arena leaderboard."
       },
       {
         name: "Lyria 3",
         type: "audio",
         released: "2026-01-01",
+        url: "https://deepmind.google/models/lyria/",
         desc: "Google's music generation family via the Gemini API — Lyria 3 Clip (30s clips/loops) and Lyria 3 Pro (full songs with verses, choruses, bridges). 44.1kHz stereo, vocals with timed lyrics, image-to-music input."
       }
     ],
@@ -188,18 +203,21 @@ window.AI_COMPANIES = [
         name: "Muse Spark 1.2",
         type: "llm",
         released: "2026-08-05",
+        url: "https://meta.ai",
         desc: "Meta's frontier-class proprietary model. Released Aug 5 with weights promised to go open 'within weeks' — marking a full-circle pivot back to open weights. Predecessor Muse Spark 1.1 (Jul) introduced Meta's first paid AI service."
       },
       {
         name: "Muse Glimmer",
         type: "llm",
         released: "2026-08-10",
+        url: "https://meta.ai",
         desc: "30B parameter model distilled from Muse Spark, Apache 2.0, 128K context. Built to run locally on consumer machines rather than via API. Announced alongside Meta's open-weights reboot."
       },
       {
         name: "Muse Code",
         type: "agent",
         released: "2026-08-05",
+        url: "https://meta.ai",
         desc: "Terminal coding agent companion to Muse Spark 1.2, competing in the Claude Code / Codex space."
       }
     ],
@@ -227,24 +245,28 @@ window.AI_COMPANIES = [
         name: "MAI Code 1.1 Flash",
         type: "llm",
         released: "2026-08-12",
+        url: "https://github.com/features/copilot",
         desc: "Code model for GitHub Copilot: 25% more token-efficient, a quarter of the cost of its June predecessor ($0.20/$1.20 per MTok). Trained on 'hundreds of thousands' of RL environments in Copilot. Still trails DeepSeek-V4-Flash-0731 on price and benchmarks."
       },
       {
         name: "MAI-Voice-2-Flash",
         type: "voice",
         released: "2026-07-23",
+        url: "https://playground.microsoft.ai/",
         desc: "2x faster than MAI-Voice-2 and 32% cheaper ($15 per 1M chars). Powers Dynamics 365 Contact Center and Azure Voice Live."
       },
       {
         name: "MAI-Transcribe-1.5",
         type: "audio",
         released: "2026-05-01",
+        url: "https://playground.microsoft.ai/",
         desc: "Speech recognition model in the MAI speech stack."
       },
       {
         name: "Phi-4 family",
         type: "llm",
         released: "2024-12-12",
+        url: "https://huggingface.co/chat/models/microsoft/phi-4",
         desc: "Microsoft's open small-language-model family (MIT): Phi-4 (14B, math/logic specialist), Phi-4-mini (200K vocab, function calling), Phi-4-multimodal (text/audio/vision). Tiny enough for Raspberry Pi and edge devices — Tina Huang's pick for local math/logic work."
       }
     ],
@@ -273,18 +295,21 @@ window.AI_COMPANIES = [
         name: "Nemotron 3.5 Lightning",
         type: "llm",
         released: "2026-08-11",
+        url: "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b",
         desc: "30B MoE (3B active) open model for high-volume agent execution: up to 4x output speed, 30% faster agentic task completion, Pareto frontier on accuracy-vs-speed. Runs from DGX Spark to data centers. OpenMDW-1.1 license."
       },
       {
         name: "Nemotron 3 Ultra",
         type: "llm",
         released: "2026-06-04",
+        url: "https://build.nvidia.com/nvidia/nemotron-3-ultra-550b-a55b",
         desc: "550B/55B MoE open model for frontier reasoning and orchestration in long-running agents. Hybrid Mamba-Transformer layers, LatentMoE, 5x throughput vs class peers, fully open weights/data/recipes."
       },
       {
         name: "NeMo Switchyard",
         type: "infra",
         released: "2026-08-11",
+        url: "https://github.com/NVIDIA-NeMo/Switchyard",
         desc: "Open-source model routing library: intelligently directs each request to the most capable/suitable model across open, proprietary, and NVIDIA models."
       }
     ],
@@ -312,12 +337,14 @@ window.AI_COMPANIES = [
         name: "Grok 4.6",
         type: "llm",
         released: "2026-08-12",
+        url: "https://grok.com",
         desc: "Frontier model built for long-running agents — extended coding sessions, research, app-building. Scores 61 on the Artificial Analysis Intelligence Index, tying GPT-5.6 Sol Max and one behind Fable 5. 500k context, $2/$6 per MTok. Live in Cursor, Grok Build, and the API."
       },
       {
         name: "Grok Bot",
         type: "agent",
         released: "2026-08-01",
+        url: "https://grok.com",
         desc: "Agent integrated directly into X (Twitter) — platform-native automation using X data and APIs."
       }
     ],
@@ -345,24 +372,28 @@ window.AI_COMPANIES = [
         name: "Nova 2 Lite",
         type: "llm",
         released: "2025-12-02",
+        url: "https://nova.amazon.com/",
         desc: "Fast, cost-effective reasoning model for everyday workloads: thinking-effort controls, built-in code interpreter and web grounding, remote MCP tools, 1M context. Best base for building custom models with Nova Forge."
       },
       {
         name: "Nova 2 Pro",
         type: "llm",
         released: "2025-12-02",
+        url: "https://nova.amazon.com/",
         desc: "Preview — most intelligent Nova model for complex, multi-step agentic tasks: multi-document analysis, video reasoning, software engineering."
       },
       {
         name: "Nova 2 Sonic",
         type: "voice",
         released: "2025-12-02",
+        url: "https://nova.amazon.com/",
         desc: "Speech-to-speech model unifying understanding and generation — real-time conversation, 7 languages, polyglot voices, 1M context. Industry-leading conversational quality per Amazon."
       },
       {
         name: "Nova Multimodal Embeddings",
         type: "embedding",
         released: "2025-12-02",
+        url: "https://aws.amazon.com/nova/",
         desc: "First unified embedding model mapping text, documents, images, video, and audio into one space for agentic RAG and semantic search."
       }
     ],
@@ -389,6 +420,7 @@ window.AI_COMPANIES = [
         name: "Command A+",
         type: "llm",
         released: "2026-05-20",
+        url: "https://dashboard.cohere.com/playground",
         desc: "First Cohere MoE: 218B total / 25B active. Excels at agentic tasks, RAG, SQL generation, and financial document analysis. 48 languages incl. all EU languages, 128K context, vision input. Apache 2.0 with BF16/FP8/W4A4 quantizations."
       }
     ],
@@ -415,12 +447,14 @@ window.AI_COMPANIES = [
         name: "Inkling",
         type: "llm",
         released: "2026-07-15",
+        url: "https://huggingface.co/chat/models/thinkingmachines/Inkling",
         desc: "975B total / 41B active MoE, 1M context, native text/image/audio input, pretrained on 45T tokens. Open weights. Deliberately not the strongest overall — the best open-weights base for customization, calibration, and fine-tuning. Fine-tune on the Tinker platform."
       },
       {
         name: "Inkling-Small",
         type: "llm",
         released: "2026-07-15",
+        url: "https://huggingface.co/chat/models/thinkingmachines/Inkling-Small",
         desc: "276B total / 12B active — same native multimodal input and 1M context in a smaller, cheaper package for narrower deployments."
       }
     ],
@@ -501,6 +535,7 @@ window.AI_COMPANIES = [
         name: "Suno v5.5",
         type: "audio",
         released: "2026-03-26",
+        url: "https://suno.com/create",
         desc: "Best and most expressive music model — richer arrangements, sharper vocals, more dynamic sound. Voices (verified voice cloning), Custom Models (train on your own catalog), and My Taste personalization. v5 (Sep 2025) was the breakthrough for full songs and vocals."
       }
     ],
@@ -526,12 +561,14 @@ window.AI_COMPANIES = [
         name: "Udio v1.5 / v1.5 Allegro",
         type: "audio",
         released: "2025-01-01",
+        url: "https://udio.com",
         desc: "Best raw audio fidelity for instrumentals. Current models during the transition to the fully licensed platform."
       },
       {
         name: "Starstruck",
         type: "audio",
         released: "2026-01-01",
+        url: "https://udio.com",
         desc: "Licensed AI music app — Cover, Reimagine, Remix, and Create modes with opted-in artists and songwriters. Walled garden (no export), subscription tiers. Built on licensing deals with UMG, Warner, Merlin, Kobalt, and Believe."
       }
     ],
@@ -557,12 +594,14 @@ window.AI_COMPANIES = [
         name: "Eleven v3",
         type: "voice",
         released: "2025-01-01",
+        url: "https://elevenlabs.io/app/speech-synthesis/text-to-speech",
         desc: "Latest speech synthesis — natural, life-like voice with high emotional range and contextual understanding across 74 languages. Professional Voice Cloning with accent preservation: a cloned voice speaks Turkish, Tamil, or Tagalog while still sounding like you."
       },
       {
         name: "Eleven v3 Conversational",
         type: "voice",
         released: "2026-01-01",
+        url: "https://elevenlabs.io/agents",
         desc: "Most emotionally intelligent, context-aware TTS, optimized for real-time dialogue. Dubbing API translates across 32 languages in Dubbing Studio."
       }
     ],
@@ -591,42 +630,49 @@ window.AI_COMPANIES = [
         name: "Mistral Large 3",
         type: "llm",
         released: "2025-12-02",
+        url: "https://chat.mistral.ai",
         desc: "Europe's biggest open model — 675B total / 41B active sparse MoE, Apache 2.0, trained from scratch on 3,000 H200s. Multimodal (image understanding), best-in-class multilingual (non-English/Chinese), parity with the best open instruction-tuned models. Mistral's first MoE since Mixtral."
       },
       {
         name: "Devstral 2 / Devstral Small 2",
         type: "llm",
         released: "2026-05-22",
+        url: "https://chat.mistral.ai",
         desc: "Agentic coding family for autonomous software engineering: Devstral 2 (123B dense, 256K ctx, 72.2% SWE-bench Verified, modified MIT) and Devstral Small 2 (24B, Apache 2.0, 68.0%, runs on consumer hardware). 5x-28x smaller than DeepSeek V3.2 / Kimi K2. Paired with the Mistral Vibe CLI."
       },
       {
         name: "Mistral Medium 3.5",
         type: "llm",
         released: "2025-11-01",
+        url: "https://chat.mistral.ai",
         desc: "Production flagship for agentic and enterprise workloads across the Mistral platform."
       },
       {
         name: "Mistral Small 4",
         type: "llm",
         released: "2026-03-01",
+        url: "https://chat.mistral.ai",
         desc: "Unified multimodal small model — one model for text and vision at high throughput."
       },
       {
         name: "Shieldstral",
         type: "infra",
         released: "2026-08-04",
+        url: "https://mistral.ai",
         desc: "3B open-weights (Apache 2.0) policy-adaptive safety classifier. Moderation becomes a plain-language yes/no question at inference — matches models 7x its size (84.9% text F1) and runs on a single 16GB GPU. Inaugural Open Secure AI Alliance member."
       },
       {
         name: "Leanstral 1.5",
         type: "llm",
         released: "2026-07-02",
+        url: "https://chat.mistral.ai",
         desc: "Specialized for mathematical proofs and formal verification."
       },
       {
         name: "Robostral Navigate",
         type: "agent",
         released: "2026-07-08",
+        url: "https://mistral.ai",
         desc: "Mistral's first model built for embodied navigation."
       }
     ],
@@ -654,12 +700,14 @@ window.AI_COMPANIES = [
         name: "Stable Audio 3.0",
         type: "audio",
         released: "2026-05-20",
+        url: "https://platform.stability.ai/sandbox/audio",
         desc: "Open-weight audio model family trained on licensed data — Stability's biggest open release of 2026."
       },
       {
         name: "Fast 3D",
         type: "d3d",
         released: "2025-01-01",
+        url: "https://platform.stability.ai/sandbox/3d",
         desc: "Rapid 3D asset generation from single images."
       }
     ],
@@ -706,12 +754,14 @@ window.AI_COMPANIES = [
         name: "DeepSeek-V4-Pro-0813",
         type: "llm",
         released: "2026-08-13",
+        url: "https://chat.deepseek.com",
         desc: "Official release of the flagship (preview since April): 1.6T total / 49B active MoE, 1M context. ~5.3% behind Claude Fable 5 on agent benchmarks at a blended cost ~46x lower ($0.435/$0.87 per MTok). Swapped in silently on Aug 13."
       },
       {
         name: "DeepSeek-V4-Flash-0731",
         type: "llm",
         released: "2026-07-31",
+        url: "https://huggingface.co/chat/models/deepseek-ai/DeepSeek-V4-Flash-0731",
         desc: "284B / 13B active MoE, 1M context, MIT license. Post-training alone jumped agent benchmarks ~20-47 points (Terminal-Bench 82.7, DeepSWE 54.4). Ships DSpark speculative decoding in the weights. $0.14/$0.28 per MTok."
       }
     ],
@@ -741,30 +791,35 @@ window.AI_COMPANIES = [
         name: "Qwen3-Coder",
         type: "llm",
         released: "2025-07-22",
+        url: "https://chat.qwen.ai",
         desc: "Alibaba's most agentic code model — Qwen3-Coder-480B-A35B (480B/35B active MoE, 256K native / 1M extrapolated context). SOTA among open models on agentic coding, browser-use, and tool-use, comparable to Claude Sonnet. Includes Qwen3-Coder-Next (80B-A3B) for local coding agents."
       },
       {
         name: "Qwen3.7-Max",
         type: "llm",
         released: "2026-05-20",
+        url: "https://chat.qwen.ai",
         desc: "'The Agent Frontier' — Alibaba's most capable proprietary model. Frontier coding agent, office workflow automation via MCP, and sustained execution across hundreds/thousands of steps. Jun 8 snapshot adds visual scene understanding and multimodal hybrid-agent abilities."
       },
       {
         name: "Qwen3.7-Plus",
         type: "llm",
         released: "2026-05-26",
+        url: "https://chat.qwen.ai",
         desc: "Multimodal agent model unifying vision and language: reads screens, operates GUIs, writes code from visuals, navigates mobile apps end-to-end. Generalizes across Claude Code, OpenClaw, and Qwen Code scaffolds."
       },
       {
         name: "Qwen3.7-Text-Embedding",
         type: "embedding",
         released: "2026-06-01",
+        url: "https://qwen.ai",
         desc: "Multilingual embedding model, 20% better on MTEB multilingual/CN-EN/code retrieval, dimensions 256-2560."
       },
       {
         name: "Qwen 3.5 / 3.6 open-weight family",
         type: "llm",
         released: "2026-01-01",
+        url: "https://huggingface.co/Qwen",
         desc: "The community-standard open-weight line, including the 35B Qwen3.6 used as a benchmark reference by NVIDIA and others."
       }
     ],
@@ -792,18 +847,21 @@ window.AI_COMPANIES = [
         name: "GLM-5.2",
         type: "llm",
         released: "2026-06-13",
+        url: "https://chat.z.ai",
         desc: "Flagship for long-horizon tasks — a substantial leap over GLM-5.1 with a genuinely usable 1M-token context. First Chinese model in the global top three on a major benchmark; within a point of Opus 4.8 on agentic work at ~1/5 the cost. MIT-licensed weights."
       },
       {
         name: "GLM-5V-Turbo",
         type: "vlm",
         released: "2025-11-01",
+        url: "https://chat.z.ai",
         desc: "Vision-language model for visual coding workflows."
       },
       {
         name: "AutoGLM",
         type: "agent",
         released: "2025-01-01",
+        url: "https://z.ai",
         desc: "Browser and phone agents for autonomous web tasks."
       }
     ],
@@ -831,12 +889,14 @@ window.AI_COMPANIES = [
         name: "Kimi K3",
         type: "llm",
         released: "2026-07-27",
+        url: "https://www.kimi.com",
         desc: "2.8T parameters, 104B active across 896 experts — the first open 3T-class model. Kimi Delta Attention (KDA) + Attention Residuals, native vision, 1M-token context. Full weights + 47-page technical report released Jul 27 under a custom license with revenue-based commercial terms."
       },
       {
         name: "Kimi K2.7-Code",
         type: "llm",
         released: "2026-07-27",
+        url: "https://www.kimi.com/code",
         desc: "Coding-focused agentic model built on K2.6: 1T total / 32B active MoE, 256K context, MoonViT vision encoder. Authors implementations directly (not library wrappers), ~30% fewer thinking tokens than K2.6. Modified MIT, always-on thinking mode. $0.19/$0.95/$4.00 per MTok."
       }
     ],
@@ -865,24 +925,28 @@ window.AI_COMPANIES = [
         name: "Doubao Seed 2.1 Pro",
         type: "llm",
         released: "2026-06-23",
+        url: "https://www.doubao.com/",
         desc: "Agent-era coding model — engineering delivery, long-chain agent execution, and multimodal understanding claimed comparable to GPT-5.5. ~$0.83/$4.14 per MTok, undercutting Claude Sonnet-class pricing. #8 on Code Arena Frontend."
       },
       {
         name: "Doubao Seed 2.1 Turbo",
         type: "llm",
         released: "2026-06-23",
+        url: "https://www.doubao.com/",
         desc: "Exactly half the Pro price (~$0.41/$2.07) for high-throughput, latency-sensitive production work."
       },
       {
         name: "Doubao-Seed-Evolving",
         type: "llm",
         released: "2026-06-23",
+        url: "https://www.doubao.com/",
         desc: "Rolling-update model — at least one capability upgrade per week behind a single stable API ID."
       },
       {
         name: "Doubao-Seed-Character",
         type: "llm",
         released: "2026-06-23",
+        url: "https://www.doubao.com/",
         desc: "Conversational and entertainment-tuned model with video/image/meme multimodal understanding."
       }
     ],
@@ -909,6 +973,7 @@ window.AI_COMPANIES = [
         name: "Manus",
         type: "agent",
         released: "2025-03-01",
+        url: "https://manus.im",
         desc: "General-purpose autonomous agent on a virtual computer — plans and completes multi-step tasks, browses the web, uses files, and orchestrates sub-agents. Integrations with Similarweb and Shopify. Millions of users."
       }
     ],
@@ -935,6 +1000,7 @@ window.AI_COMPANIES = [
         name: "MiniMax M3",
         type: "llm",
         released: "2026-06-01",
+        url: "https://agent.minimax.io/",
         desc: "428B total / 23B active MoE with MiniMax Sparse Attention (MSA), 1M context, native image+video input, and the ability to operate a desktop computer. The first open-weight model combining all three frontier capabilities. Weights open-sourced Jun 11-12 on Hugging Face and GitHub."
       }
     ],
@@ -961,12 +1027,14 @@ window.AI_COMPANIES = [
         name: "MiMo-V2.5",
         type: "llm",
         released: "2026-04-22",
+        url: "https://huggingface.co/chat/models/XiaomiMiMo/MiMo-V2.5",
         desc: "310B sparse MoE (15B active), trained on 48T tokens, native visual and audio understanding, 1M context. Fully open-sourced on Hugging Face. Near mid-tier performance at dirt-cheap prices — the volume king for high-volume code assistants."
       },
       {
         name: "MiMo-V2.5-Pro",
         type: "llm",
         released: "2026-04-27",
+        url: "https://huggingface.co/chat/models/XiaomiMiMo/MiMo-V2.5-Pro",
         desc: "1.02T total / 42B active, 1M context — the most capable MiMo. Almost flagship quality at ~1/8 Opus pricing. Open-sourced; climbing the OpenRouter rankings."
       }
     ],
@@ -992,6 +1060,7 @@ window.AI_COMPANIES = [
         name: "Hunyuan Hy3",
         type: "llm",
         released: "2026-07-06",
+        url: "https://aistudio.tencent.com/?model=hy3",
         desc: "295B total / 21B active MoE, 256K context, hybrid fast-and-slow thinking, Apache 2.0. Rivals flagships 2-5x its size. Renamed 'Tencent Hy'. Integrated into WorkBuddy, CodeBuddy, and Yuanbao; API on Tencent Cloud TokenHub; coming to OpenRouter, Hermes, Kilo, and Cline. Global rollout Aug 5."
       }
     ],
@@ -1035,6 +1104,7 @@ window.AI_COMPANIES = [
         name: "Fish Audio S2 / S2 Pro",
         type: "audio",
         released: "2026-01-01",
+        url: "https://fish.audio/s2/",
         desc: "State-of-the-art open-source TTS — trained on 10M+ hours across 80+ languages, Dual-Autoregressive architecture (4B slow + 400M fast) with RL alignment. Voice cloning from 10-30s samples, 15,000+ expression tags, zero-shot cross-lingual cloning, self-hostable with streaming inference."
       }
     ],
@@ -1061,18 +1131,21 @@ window.AI_COMPANIES = [
         name: "Models Hub",
         type: "infra",
         released: "2021-01-01",
+        url: "https://huggingface.co",
         desc: "The default home for open weights — every major open release lands here first (DeepSeek, GLM, Kimi, Nemotron, Qwen, Llama)."
       },
       {
         name: "Inference API / Inference Providers",
         type: "infra",
         released: "2023-01-01",
+        url: "https://huggingface.co/inference-providers",
         desc: "Serverless inference and provider routing for open models."
       },
       {
         name: "Agents / smolagents",
         type: "agent",
         released: "2025-01-01",
+        url: "https://huggingface.co/docs/smolagents",
         desc: "Open agent tooling and the smolagents framework for building on open models."
       }
     ],
@@ -1099,18 +1172,21 @@ window.AI_COMPANIES = [
         name: "Hermes-4.3-Seed-36B",
         type: "llm",
         released: "2025-12-03",
+        url: "https://huggingface.co/chat/models/NousResearch/Hermes-4.3-Seed-36B",
         desc: "Roughly Hermes-4-70B performance at half the size, post-trained entirely on the Psyche decentralized training network. The community's agent-friendly specialist."
       },
       {
         name: "DeepHermes 3",
         type: "llm",
         released: "2025-05-01",
+        url: "https://huggingface.co/chat/models/NousResearch/DeepHermes-3",
         desc: "Reasoning-focused family bridging quick-answer and deep-deliberation modes."
       },
       {
         name: "Hermes Agent",
         type: "agent",
         released: "2025-10-01",
+        url: "https://nousresearch.com",
         desc: "Open agent platform used with Nemotron 3.5 Lightning and other open models."
       }
     ],
@@ -1137,18 +1213,21 @@ window.AI_COMPANIES = [
         name: "Unified API",
         type: "infra",
         released: "2023-01-01",
+        url: "https://openrouter.ai",
         desc: "One API across hundreds of models — OpenAI-, Anthropic-, and OpenCode-compatible surfaces with per-provider fallbacks."
       },
       {
         name: "Model Routing",
         type: "infra",
         released: "2024-01-01",
+        url: "https://openrouter.ai",
         desc: "Automatic routing, fallbacks, and cost optimization across the long tail of open and closed models."
       },
       {
         name: "Ori Harness",
         type: "infra",
         released: "2026-08-04",
+        url: "https://openrouter.ai/blog/announcements/ori-harness/",
         desc: "CLI that plugs OpenRouter into Claude Code, Codex, OpenCode, and Hermes with optimized per-model settings — including tool-search prompts that halve system-prompt tokens."
       }
     ],
