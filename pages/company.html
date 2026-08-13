@@ -41,6 +41,21 @@
     d3d: '3D', voice: 'VOICE', embedding: 'EMBEDDING', search: 'SEARCH',
     agent: 'AGENT', 'fine-tune': 'FINE-TUNE', infra: 'INFRA'
   };
+  // Model-kind grouping (same as the homepage filters): Text / Image / Audio / Video / Other
+  var KIND_GROUPS = {
+    text:  ['llm', 'vlm'],
+    image: ['image', 'd3d'],
+    audio: ['audio', 'voice'],
+    video: ['video']
+  };
+  var KIND_ORDER = ['text', 'image', 'audio', 'video', 'other'];
+  var KIND_LABEL = { text: 'Text', image: 'Image', audio: 'Audio', video: 'Video', other: 'Other' };
+  function kindOf(m) {
+    for (var k in KIND_GROUPS) {
+      if (KIND_GROUPS[k].indexOf(m.type) !== -1) return k;
+    }
+    return 'other';
+  }
 
   var slug = new URLSearchParams(window.location.search).get('company');
   var company = COMPANIES.find(function (c) { return c.slug === slug; });
@@ -66,10 +81,19 @@
     return '<span class="meta-tag ' + t.type + '">' + t.label + '</span>';
   }).join('');
 
-  var modelCards = company.models.map(function (m) {
-    var date = m.released ? '<span class="release-date">' + fmtDate(m.released) + '</span>' : '';
-    var type = TYPE_LABEL[m.type] ? '<span class="type-tag ' + m.type + '">' + TYPE_LABEL[m.type] + '</span>' : '';
-    return '<div class="card"><h3>' + m.name + type + date + '</h3><p>' + m.desc + '</p></div>';
+  var grouped = {};
+  company.models.forEach(function (m) {
+    var k = kindOf(m);
+    (grouped[k] = grouped[k] || []).push(m);
+  });
+  var modelCards = KIND_ORDER.map(function (k) {
+    if (!grouped[k] || !grouped[k].length) return '';
+    var cards = grouped[k].map(function (m) {
+      var date = m.released ? '<span class="release-date">' + fmtDate(m.released) + '</span>' : '';
+      var type = TYPE_LABEL[m.type] ? '<span class="type-tag ' + m.type + '">' + TYPE_LABEL[m.type] + '</span>' : '';
+      return '<div class="card"><h3>' + m.name + type + date + '</h3><p>' + m.desc + '</p></div>';
+    }).join('');
+    return '<h3 class="model-group-header kind-' + k + '">' + KIND_LABEL[k] + '</h3>' + cards;
   }).join('');
 
   // Timeline: models with release dates, newest first

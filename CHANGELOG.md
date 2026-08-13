@@ -1,5 +1,12 @@
 # AI Model Tracker Changelog
 
+## 2026-08-13 — Company pages group models by kind
+- "Latest Models and Products" on each company page now groups models under
+  colored headers: **Text / Image / Audio / Video / Other** (same kind mapping
+  as the homepage filters). E.g. OpenAI: Text (GPT-5.6 family, gpt-oss),
+  Image (GPT Image 2), Audio (GPT-Live). Media-only companies show just their
+  single group (e.g. Runway: Video).
+
 ## 2026-08-13 — Region filter chips removed
 - Removed the America / Europe / China / Infra filter chips and their logic/CSS.
   Filters are now just Text / Image / Audio / Video (+ search). The homepage
