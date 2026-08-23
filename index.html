@@ -56,6 +56,7 @@
 <script>
 (function () {
   'use strict';
+  var TRACKER_UPDATED = '2026-08-23';
   var COMPANIES = window.AI_COMPANIES || [];
 
   // Merge image/video generation models (data/media/*) back into their companies
@@ -126,6 +127,11 @@
       '<div class="stat">latest release <b>' + fmtDate(latest) + '</b></div>';
   }
 
+  function renderFooter() {
+    document.getElementById('footer').innerHTML =
+      'AI Model Tracker · updated ' + fmtDate(TRACKER_UPDATED);
+  }
+
   function renderSections() {
     var container = document.getElementById('sections');
     var empty = document.getElementById('emptyState');
@@ -156,7 +162,7 @@
       '<div class="company-tagline">' + c.tagline + '</div>' +
       '<div class="company-meta">' + tags + '</div>' +
       '<div class="retention-hook">' + c.retention + '</div>' +
-      '<div class="updated-tag">updated ' + fmtDate(c.updated || '2026-08-13') + '</div>' +
+      '<div class="updated-tag">updated ' + fmtDate(c.updated || TRACKER_UPDATED) + '</div>' +
       '</a>';
   }
 
@@ -165,7 +171,7 @@
     var subtitle = document.getElementById('subtitle');
     subtitle.innerHTML = state.q
       ? 'Showing results for <b>&ldquo;' + escapeHtml(state.q) + '&rdquo;</b>'
-      : 'Companies and their latest models. Updated <b>' + fmtDate('2026-08-13') + '</b>.';
+      : 'Companies and their latest models. Updated <b>' + fmtDate(TRACKER_UPDATED) + '</b>.';
   }
 
   function escapeHtml(s) {
@@ -192,6 +198,7 @@
   window.addEventListener('beforeunload', function () { overlay.classList.add('visible'); });
 
   renderStats();
+  renderFooter();
   apply();
 })();
 </script>

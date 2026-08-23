@@ -10,13 +10,14 @@ window.AI_COMPANIES = [
     name: "OpenAI",
     flag: "\uD83C\uDDFA\uD83C\uDDF8",
     region: "us",
-    tagline: "GPT-5.6 family: Sol frontier, Terra everyday, Luna efficient. GPT-Live voice, GPT Image 2, open gpt-oss.",
+    tagline: "GPT-5.6 family: Sol frontier, Terra everyday, Luna efficient. GPT-5.6 Cyber, GPT-Live voice, GPT Image 2, open gpt-oss.",
     tags: [
       { label: "CLOSED", type: "closed" },
       { label: "OPEN", type: "open" },
       { label: "GPT-5.6 Sol", type: "model" },
       { label: "GPT-5.6 Terra", type: "model" },
       { label: "GPT-5.6 Luna", type: "model" },
+      { label: "GPT-5.6 Cyber", type: "model" },
       { label: "GPT-Live", type: "model" },
       { label: "GPT Image 2", type: "model" },
       { label: "gpt-oss", type: "model" }
@@ -44,6 +45,13 @@ window.AI_COMPANIES = [
         desc: "Most cost-efficient variant for high-throughput production workloads. Price cut 80% on Jul 30. Default model for Free and Go users since Aug 6, with unlimited text chats and a Think button for harder questions."
       },
       {
+        name: "GPT-5.6 Cyber",
+        type: "llm",
+        released: "2026-08-10",
+        url: "https://developers.openai.com/api/docs/models/gpt-5.6-cyber",
+        desc: "Purpose-trained cybersecurity model for approved defenders conducting advanced, authorized vulnerability research, exploit validation, and security testing. Available through OpenAI's Daybreak program with separate approval and provisioning."
+      },
+      {
         name: "GPT-Live-1 / GPT-Live-1 mini",
         type: "voice",
         released: "2026-07-08",
@@ -58,10 +66,11 @@ window.AI_COMPANIES = [
         desc: "OpenAI's first open-weight language models since GPT-2. 117B/5.1B and 21B/3.6B active MoE, Apache 2.0, 128K context, MXFP4-quantized (120B fits one 80GB GPU, 20B in 16GB). Reasoning-effort control, full CoT, near o4-mini/o3-mini performance."
       }
     ],
-    activity: "Aug 6: GPT-5.6 Sol tuned for ChatGPT (effort slider) and Luna expanded to Free users. Jul 30: Luna -80%, Terra -20%, new API Fast mode (up to 2.5x speed at 2x price). Jul 8: GPT-Live voice launch. Aug 31: GPT-5.4/5.4 mini retire from Codex. July: rogue OpenAI models breached Hugging Face — the first fully AI-driven cyber incident — prompting paused training and an industry-wide open-weights debate.",
+    activity: "Aug 10: GPT-5.6 Cyber introduced through the Daybreak program for approved defenders. Aug 6: GPT-5.6 Sol tuned for ChatGPT (effort slider) and Luna expanded to Free users. Jul 30: Luna -80%, Terra -20%, new API Fast mode (up to 2.5x speed at 2x price). Jul 8: GPT-Live voice launch. Aug 31: GPT-5.4/5.4 mini retire from Codex. July: rogue OpenAI models breached Hugging Face — the first fully AI-driven cyber incident — prompting paused training and an industry-wide open-weights debate.",
     retention: "Market definition is more important than best-in-class benchmarks.",
     sources: [
       { label: "GPT-5.6 announcement — openai.com", url: "https://openai.com/index/gpt-5-6/" },
+      { label: "GPT-5.6 Cyber model — developers.openai.com", url: "https://developers.openai.com/api/docs/models/gpt-5.6-cyber" },
       { label: "Improving GPT-5.6 Sol in ChatGPT — openai.com", url: "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/" },
       { label: "GPT-5.6 August update — Deployment Safety Hub", url: "https://deploymentsafety.openai.com/gpt-5-6-august-update" },
       { label: "Release Notes — OpenAI", url: "https://openai.com/products/release-notes/" }
@@ -123,12 +132,13 @@ window.AI_COMPANIES = [
     name: "Google AI",
     flag: "\uD83C\uDDFA\uD83C\uDDF8",
     region: "us",
-    tagline: "Gemini 3.1 Pro flagship. 3.6 Flash workhorse. Veo 3.1 + Omni Flash video. Nano Banana image. Gemma 4 open.",
+    tagline: "Gemini 3.7 Flash workhorse. 3.1 Pro flagship. Lyria 3.5, Veo 3.1 + Omni Flash, Nano Banana 2 Lite, Gemma 4 open.",
     tags: [
       { label: "CLOSED", type: "closed" },
       { label: "OPEN", type: "open" },
       { label: "ENTERPRISE", type: "enterprise" },
       { label: "Gemini 3.1 Pro", type: "model" },
+      { label: "Gemini 3.7 Flash", type: "model" },
       { label: "Gemini 3.6 Flash", type: "model" },
       { label: "Gemini Omni Flash", type: "model" },
       { label: "Gemma 4", type: "model" }
@@ -147,6 +157,13 @@ window.AI_COMPANIES = [
         released: "2026-07-21",
         url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3.6-flash",
         desc: "Workhorse model for production agents: better coding, knowledge work, and multimodal performance with 17% less output token usage than 3.5 Flash, at lower cost. Replaced 3.5 Flash in the Gemini app and API."
+      },
+      {
+        name: "Gemini 3.7 Flash",
+        type: "llm",
+        released: "2026-08-13",
+        url: "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
+        desc: "Google's latest workhorse model for coding and agents. Based on Gemini 3.6 Flash with customizable thinking, native text/image/audio/video inputs, up to 1M context, and 64K output. Available in Gemini, AI Studio, Gemini API, Vertex AI, and Antigravity."
       },
       {
         name: "Gemini 3.5 Flash-Lite",
@@ -170,17 +187,19 @@ window.AI_COMPANIES = [
         desc: "Google's most capable open models — Apache 2.0, built from Gemini 3 research. Five sizes (E2B, E4B, 12B, 26B-A4B MoE, 31B dense), 256K context, 140+ languages, multimodal. 31B ranks #3 open model on the Arena leaderboard."
       },
       {
-        name: "Lyria 3",
+        name: "Lyria 3.5",
         type: "audio",
-        released: "2026-01-01",
+        released: "2026-07-29",
         url: "https://deepmind.google/models/lyria/",
-        desc: "Google's music generation family via the Gemini API — Lyria 3 Clip (30s clips/loops) and Lyria 3 Pro (full songs with verses, choruses, bridges). 44.1kHz stereo, vocals with timed lyrics, image-to-music input."
+        desc: "Google's latest music generation model, with improved musicality, lyrics, vocals, acoustic detail, image-to-music input, and variable song lengths up to three minutes via Flow Music."
       }
     ],
-    activity: "Jul 21: 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber released. Feb 19: Gemini 3.1 Pro flagship. Apr 2: Gemma 4 open family. 3.5 Pro repeatedly delayed (was promised for June at I/O). Gemini 4 pre-training has begun — described as Google's most ambitious run yet. Jul: Gemini Robotics ER 2 for embodied agents.",
+    activity: "Aug 13: Gemini 3.7 Flash released as Google's latest workhorse for coding and agents. Jul 29: Lyria 3.5 launched with improved vocals, musicality, and variable song lengths. Jul 21: 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber released. Feb 19: Gemini 3.1 Pro flagship. Apr 2: Gemma 4 open family. Jul 30: Gemini Robotics 2 family for embodied agents.",
     retention: "Their moat is integration, not model publishing.",
     sources: [
       { label: "3.6 Flash, 3.5 Flash-Lite, 3.5 Flash Cyber — blog.google", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" },
+      { label: "Gemini 3.7 Flash — Google AI for Developers", url: "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash" },
+      { label: "Lyria 3.5 — Google DeepMind", url: "https://deepmind.google/models/lyria/" },
       { label: "Introducing Gemini Omni — blog.google", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/" },
       { label: "Gemini 3.6 Flash — Ars Technica", url: "https://arstechnica.com/google/2026/07/google-reveals-faster-and-cheaper-gemini-3-6-flash-says-3-5-pro-is-still-in-testing/" },
       { label: "Gemini API release notes", url: "https://ai.google.dev/gemini-api/docs/changelog" }
@@ -233,11 +252,12 @@ window.AI_COMPANIES = [
     name: "Microsoft",
     flag: "\uD83C\uDDFA\uD83C\uDDF8",
     region: "us",
-    tagline: "MAI family expands: Image-2.6 is #2 in the world. Code 1.1 Flash. Voice-2-Flash. Phi-4 open.",
+    tagline: "MAI family expands: Thinking-1 reasoning, Image-2.6, Code 1.1 Flash, Voice-2-Flash. Phi-4 open.",
     tags: [
       { label: "CLOSED", type: "closed" },
       { label: "ENTERPRISE", type: "enterprise" },
       { label: "MAI-Image-2.6", type: "model" },
+      { label: "MAI-Thinking-1", type: "model" },
       { label: "MAI Code 1.1 Flash", type: "model" }
     ],
     models: [
@@ -247,6 +267,13 @@ window.AI_COMPANIES = [
         released: "2026-08-12",
         url: "https://github.com/features/copilot",
         desc: "Code model for GitHub Copilot: 25% more token-efficient, a quarter of the cost of its June predecessor ($0.20/$1.20 per MTok). Trained on 'hundreds of thousands' of RL environments in Copilot. Still trails DeepSeek-V4-Flash-0731 on price and benchmarks."
+      },
+      {
+        name: "MAI-Thinking-1",
+        type: "llm",
+        released: "2026-08-12",
+        url: "https://ai.azure.com/explore/models/mai-thinking-1",
+        desc: "Preview reasoning model for multi-step math, coding, and enterprise workloads. Supports chat completions, function calling, long context, and controllable reasoning through Microsoft Foundry."
       },
       {
         name: "MAI-Voice-2-Flash",
@@ -270,10 +297,11 @@ window.AI_COMPANIES = [
         desc: "Microsoft's open small-language-model family (MIT): Phi-4 (14B, math/logic specialist), Phi-4-mini (200K vocab, function calling), Phi-4-multimodal (text/audio/vision). Tiny enough for Raspberry Pi and edge devices — Tina Huang's pick for local math/logic work."
       }
     ],
-    activity: "Copilot, Teams, and Bing are progressively swapping OpenAI/Anthropic models for in-house MAI to cut costs. Seven in-house models shipped at Build 2026. MAI-Image-2.5 is now the default in Bing Image Creator, PowerPoint, and OneDrive. Signed the industry letter supporting open-weight models.",
+    activity: "Aug 12: MAI-Thinking-1 entered public preview in Microsoft Foundry. Aug 11: MAI Code 1.1 Flash shipped for GitHub Copilot and VS Code. Aug 10: MAI-Image-2.6 launched. Copilot, Teams, and Bing are progressively swapping OpenAI/Anthropic models for in-house MAI to cut costs. Signed the industry letter supporting open-weight models.",
     retention: "Building in-house AI to reduce OpenAI dependency.",
     sources: [
       { label: "MAI-Image-2.6 — Neowin", url: "https://www.neowin.net/news/microsofts-new-maiimage26-outperforms-all-rivals-except-gptimage2-on-arena-leaderboard/" },
+      { label: "MAI-Thinking-1 — Microsoft Foundry", url: "https://github.com/microsoft-foundry/model-releases" },
       { label: "MAI Code 1.1 Flash vs DeepSeek — The Decoder", url: "https://the-decoder.com/microsofts-new-mai-code-1-1-flash-gets-crushed-by-deepseek-on-both-price-and-performance/" },
       { label: "MAI-Voice-2-Flash — microsoft.ai", url: "https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/" }
     ]
@@ -778,12 +806,13 @@ window.AI_COMPANIES = [
     name: "Alibaba (Qwen)",
     flag: "\uD83C\uDDE8\uD83C\uDDF3",
     region: "china",
-    tagline: "Qwen3.7 agent era: Max frontier, Plus multimodal hybrid agent, Qwen3-Coder, open-weight 3.x family.",
+    tagline: "Qwen3.8 open weights: 2.4T frontier and 27B compact model. Qwen3.7 agent era, Qwen3-Coder.",
     tags: [
       { label: "CLOSED", type: "closed" },
       { label: "OPEN", type: "open" },
       { label: "Qwen3.7 Max", type: "model" },
       { label: "Qwen3.7 Plus", type: "model" },
+      { label: "Qwen3.8", type: "model" },
       { label: "Qwen3-Coder", type: "model" }
     ],
     models: [
@@ -816,17 +845,18 @@ window.AI_COMPANIES = [
         desc: "Multilingual embedding model, 20% better on MTEB multilingual/CN-EN/code retrieval, dimensions 256-2560."
       },
       {
-        name: "Qwen 3.5 / 3.6 open-weight family",
+        name: "Qwen3.8-2.4T-A95B / Qwen3.8-27B",
         type: "llm",
-        released: "2026-01-01",
-        url: "https://huggingface.co/Qwen",
-        desc: "The community-standard open-weight line, including the 35B Qwen3.6 used as a benchmark reference by NVIDIA and others."
+        released: "2026-08-14",
+        url: "https://github.com/QwenLM/Qwen3.8",
+        desc: "Latest Qwen open-weight release: a 2.4T-parameter MoE model with 95B active parameters plus a 27B dense model. Both are available on Hugging Face and ModelScope, with native support in Qwen Studio, Qwen Cloud, Qoder, and Qwen Code."
       }
     ],
-    activity: "Qwen3.7 family rolled out May-June 2026 via Alibaba Cloud Model Studio with a US-region variant (qwen3.7-plus-us). Cross-scaffold generalization is the differentiator — the same model runs consistently across rival agent harnesses.",
+    activity: "Aug 14: Qwen3.8-27B became available, following the Aug 12 release of the 2.4T Qwen3.8-2.4T-A95B model. Qwen3.7 family rolled out May-June 2026 via Alibaba Cloud Model Studio with a US-region variant (qwen3.7-plus-us). Cross-scaffold generalization is the differentiator — the same model runs consistently across rival agent harnesses.",
     retention: "Full-stack integration from chips to apps.",
     sources: [
       { label: "Qwen3.7: The Agent Frontier — qwen.ai", url: "https://qwen.ai/blog?id=qwen3.7" },
+      { label: "Qwen3.8 release notes — GitHub", url: "https://github.com/QwenLM/Qwen3.8" },
       { label: "Qwen3.7-Plus — Alibaba Cloud Community", url: "https://www.alibabacloud.com/blog/qwen3-7-plus-multimodal-agent-intelligence_603206" },
       { label: "Qwen model releases — QwenCloud", url: "https://docs.qwencloud.com/changelog/models" }
     ]

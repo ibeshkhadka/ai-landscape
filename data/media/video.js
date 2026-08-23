@@ -13,11 +13,11 @@ window.AI_VIDEO_MODELS = {
       desc: "First Omni family model: creates and edits high-quality video from any combination of text, image, audio, and video — 'Nano Banana for video.' Live in the Gemini app, Google Flow, and YouTube Shorts."
     },
     {
-      name: "Veo 3.1",
+      name: "Veo 3.1 / Veo 3.1 Lite",
       type: "video",
-      released: "2026-01-01",
+      released: "2026-04-08",
       url: "https://deepmind.google/models/veo/",
-      desc: "Google's leading video generation model — cinematic 4K output with natively synchronized audio (sound effects, ambient noise, dialogue). Text-to-video, image-to-video, and text-to-audio+video with realistic physics. The current king of the video leaderboard."
+      desc: "Google's leading video generation family — high-quality, high-resolution video with synchronized audio from text or images. Veo 3.1 Lite adds a faster, more efficient variant for Gemini API, AI Studio, Vertex AI, and Flow."
     }
   ],
   nvidia: [

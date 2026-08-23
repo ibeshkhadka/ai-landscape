@@ -1,5 +1,11 @@
 # AI Model Tracker Changelog
 
+## 2026-08-23 — Model catalog refreshed
+- Updated the tracker timestamp across the homepage, company pages, README, and model cards.
+- Added OpenAI GPT-5.6 Cyber (Aug 10), Google Gemini 3.7 Flash (Aug 13), Microsoft MAI-Thinking-1 (Aug 12), and Qwen3.8 open models (Aug 12–14).
+- Replaced stale Google entries with Lyria 3.5, Nano Banana 2 Lite, and the Veo 3.1 Lite variant.
+- Historical release dates remain unchanged unless an official source identified a newer model or variant.
+
 ## 2026-08-13 — Visit buttons point to exact model playgrounds
 - Re-targeted 64 model URLs from generic homepages/docs pages to the exact
   playground or model deep-link where the model can be tried live:

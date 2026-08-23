@@ -15,11 +15,11 @@ window.AI_IMAGE_MODELS = {
   ],
   "google-ai": [
     {
-      name: "Nano Banana family",
+      name: "Nano Banana 2 Lite",
       type: "image",
-      released: "2026-01-01",
-      url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3-pro-image",
-      desc: "Gemini's native image generation and editing models: Nano Banana Pro (Gemini 3 Pro Image, studio-quality), Nano Banana 2 (Gemini 3.1 Flash Image, 4K workhorse), Nano Banana 2 Lite (Gemini 3.1 Flash-Lite Image, fastest/cheapest). Up to 14 reference images, 1K-4K output, Search grounding."
+      released: "2026-06-30",
+      url: "https://aistudio.google.com/prompts/new_chat?model=gemini-3.1-flash-lite-image",
+      desc: "Google's fastest, most cost-efficient Gemini Image model for rapid generation and editing. Built for high-throughput workflows with reduced latency and cost while preserving character consistency, precise edits, and real-world knowledge."
     }
   ],
   meta: [

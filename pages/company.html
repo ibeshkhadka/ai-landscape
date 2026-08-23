@@ -25,6 +25,7 @@
 <script>
 (function () {
   'use strict';
+  var TRACKER_UPDATED = '2026-08-23';
   var COMPANIES = window.AI_COMPANIES || [];
 
   // Merge image/video generation models (data/media/*) back into their companies
@@ -116,7 +117,7 @@
     '<h1>' + company.name + ' ' + company.flag + '</h1>' +
     '<div class="subtitle">' + company.tagline + '</div>' +
     '<div class="meta">' + tags + '</div>' +
-    '<div class="updated">updated ' + fmtDate(company.updated || '2026-08-13') + '</div>' +
+    '<div class="updated">updated ' + fmtDate(company.updated || TRACKER_UPDATED) + '</div>' +
 
     '<section><h2>Latest Models and Products</h2>' + modelCards + '</section>' +
 

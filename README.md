@@ -1,6 +1,6 @@
 # AI Model Tracker
 
-Overview of AI companies, models, and retention framework. Updated August 13, 2026.
+Overview of AI companies, models, and retention framework. Updated August 23, 2026.
 
 ## Pages
 - `index.html` — homepage with search, Text/Image/Audio/Video filters, and stats (JS-rendered)
