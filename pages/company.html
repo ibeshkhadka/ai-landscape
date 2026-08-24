@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Company — AI Model Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=20260823-contrast">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=20260824-field-journal-2">
 </head>
 <body>
 <div class="loading-overlay" id="loadingOverlay">
@@ -106,7 +106,7 @@
   var timeline = dated.length
     ? '<div class="timeline">' + dated.map(function (m) {
         return '<div class="timeline-item"><div class="t-date">' + fmtDate(m.released) + '</div>' +
-          '<div class="t-text"><b style="color:#e4e4e7">' + m.name + '</b> — ' + m.desc.split('.')[0] + '.</div></div>';
+          '<div class="t-text"><b>' + m.name + '</b> — ' + m.desc.split('.')[0] + '.</div></div>';
       }).join('') + '</div>'
     : '<div class="card"><p>No release dates recorded for this company yet.</p></div>';
 

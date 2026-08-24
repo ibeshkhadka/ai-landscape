@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Model Tracker — AI Landscape</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260823-contrast">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260824-clean-cards">
 </head>
 <body>
 <div class="loading-overlay" id="loadingOverlay">
@@ -23,9 +23,18 @@
   </div>
 
   <div class="header">
-    <div class="eyebrow"><span class="eyebrow-mark"></span> A living index of modern intelligence</div>
-    <h1>AI Model Tracker</h1>
-    <div class="subtitle" id="subtitle">Companies and their latest models.</div>
+    <div class="header-grid">
+      <div class="header-copy">
+        <div class="eyebrow"><span class="eyebrow-mark"></span> A living index of modern intelligence</div>
+        <h1>AI Model <span>Tracker</span></h1>
+        <div class="subtitle" id="subtitle">Companies and their latest models.</div>
+      </div>
+      <aside class="hero-note">
+        <div class="hero-note-label">Field note / 01</div>
+        <p>Models move fast. Context should move slower.</p>
+        <div class="hero-note-foot"><span class="hero-orbit"></span><span>Human-curated, always in motion</span></div>
+      </aside>
+    </div>
   </div>
 
   <div class="controls">
@@ -162,8 +171,6 @@
       '<div class="company-header"><div class="company-name">' + c.name + '</div><div class="country-flag">' + c.flag + '</div></div>' +
       '<div class="company-tagline">' + c.tagline + '</div>' +
       '<div class="company-meta">' + tags + '</div>' +
-      '<div class="retention-hook">' + c.retention + '</div>' +
-      '<div class="updated-tag">updated ' + fmtDate(c.updated || TRACKER_UPDATED) + '</div>' +
       '</a>';
   }
 
