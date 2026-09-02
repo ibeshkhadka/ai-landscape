@@ -376,11 +376,12 @@ window.AI_COMPANIES = [
         desc: "Agent integrated directly into X (Twitter) — platform-native automation using X data and APIs."
       }
     ],
-    activity: "Aug 12: Grok 4.6 released with 2x included usage in Grok Build and Cursor for the first week. Jul 8: Grok 4.5 (V9). Grok Build CLI launched. Musk's public timeline has Grok 4.7 in ~four weeks; a leak points to a 2.1T architecture for the scale jump.",
+    activity: "Aug 12: Grok 4.6 released with 2x included usage in Grok Build and Cursor for the first week. Aug 7: Grok Imagine Image 2.0 launched (generation + editing, #2 on Text-to-Image Arena). Jul 8: Grok 4.5 (V9). Grok Build CLI launched. Musk's public timeline has Grok 4.7 in ~four weeks; a leak points to a 2.1T architecture.",
     retention: "Multi-agent inference is the architecture bet.",
     sources: [
       { label: "Grok 4.6 release notes — docs.x.ai", url: "https://docs.x.ai/developers/release-notes" },
-      { label: "Grok 4.6 benchmarks — OfficeChai", url: "https://officechai.com/ai/grok-4-6-benchmarks/" }
+      { label: "Grok 4.6 benchmarks — OfficeChai", url: "https://officechai.com/ai/grok-4-6-benchmarks/" },
+      { label: "Grok Imagine Image 2.0 — x.ai", url: "https://x.ai/news" }
     ]
   },
   {
@@ -771,11 +772,12 @@ window.AI_COMPANIES = [
     name: "DeepSeek",
     flag: "\uD83C\uDDE8\uD83C\uDDF3",
     region: "china",
-    tagline: "V4-Pro-0813 official. V4-Flash-0731 agent monster. ~5% behind Claude at 1/46th the price.",
+    tagline: "V4-Pro-0813 + V4-Flash-0731 agent monsters. V4-Flash-Vision-Exp: first vision-capable Flash.",
     tags: [
       { label: "OPEN", type: "open" },
       { label: "DeepSeek-V4-Pro", type: "model" },
-      { label: "DeepSeek-V4-Flash", type: "model" }
+      { label: "DeepSeek-V4-Flash", type: "model" },
+      { label: "V4-Flash-Vision-Exp", type: "model" }
     ],
     models: [
       {
@@ -791,9 +793,16 @@ window.AI_COMPANIES = [
         released: "2026-07-31",
         url: "https://huggingface.co/chat/models/deepseek-ai/DeepSeek-V4-Flash-0731",
         desc: "284B / 13B active MoE, 1M context, MIT license. Post-training alone jumped agent benchmarks ~20-47 points (Terminal-Bench 82.7, DeepSWE 54.4). Ships DSpark speculative decoding in the weights. $0.14/$0.28 per MTok."
+      },
+      {
+        name: "DeepSeek-V4-Flash-Vision-Exp",
+        type: "vlm",
+        released: "2026-08-21",
+        url: "https://chat.deepseek.com",
+        desc: "Experimental multimodal model (Aug 21) — DeepSeek's first vision-capable Flash. Keeps V4-Flash text/agent parity, adds JPEG/PNG/GIF/WebP image input; multimodal-agent performance close to Opus-4.8. API-only, ~1M context. Capability claims are official, not independently benchmarked."
       }
     ],
-    activity: "V4-Flash-0731 topped OpenRouter's weekly usage at 7.22T tokens (Jul 27-Aug 2) — Chinese models held the top four spots. Official V4-Pro-0813 landed Aug 13 with unchanged pricing. External verification of the new official build is pending. MIT-licensed weights on Hugging Face.",
+    activity: "Aug 21: V4-Flash-Vision-Exp — DeepSeek's first vision-capable Flash model, experimental on the API. V4-Flash-0731 topped OpenRouter's weekly usage at 7.22T tokens (Jul 27-Aug 2). Official V4-Pro-0813 landed Aug 13 with unchanged pricing. MIT-licensed weights on Hugging Face.",
     retention: "Cost-efficient reasoning is the niche.",
     sources: [
       { label: "V4 Pro 0813 official — Digital Today", url: "https://www.digitaltoday.co.kr/en/view/92711/deepseek-v4-pro-official-release-0813-build-claude-46-times-cheaper-5-percent-gap" },
@@ -806,13 +815,14 @@ window.AI_COMPANIES = [
     name: "Alibaba (Qwen)",
     flag: "\uD83C\uDDE8\uD83C\uDDF3",
     region: "china",
-    tagline: "Qwen3.8 open weights: 2.4T frontier and 27B compact model. Qwen3.7 agent era, Qwen3-Coder.",
+    tagline: "Qwen3.8 open weights: 2.4T frontier, 27B compact, + Flash-Next Qwen4-preview MoE. Qwen3.7 agent era, Qwen3-Coder.",
     tags: [
       { label: "CLOSED", type: "closed" },
       { label: "OPEN", type: "open" },
       { label: "Qwen3.7 Max", type: "model" },
       { label: "Qwen3.7 Plus", type: "model" },
       { label: "Qwen3.8", type: "model" },
+      { label: "Qwen3.8-Flash-Next", type: "model" },
       { label: "Qwen3-Coder", type: "model" }
     ],
     models: [
@@ -850,9 +860,16 @@ window.AI_COMPANIES = [
         released: "2026-08-14",
         url: "https://github.com/QwenLM/Qwen3.8",
         desc: "Latest Qwen open-weight release: a 2.4T-parameter MoE model with 95B active parameters plus a 27B dense model. Both are available on Hugging Face and ModelScope, with native support in Qwen Studio, Qwen Cloud, Qoder, and Qwen Code."
+      },
+      {
+        name: "Qwen3.8-Flash-Next",
+        type: "llm",
+        released: "2026-08-26",
+        url: "https://chat.qwen.ai",
+        desc: "Open-weight multimodal MoE previewing the Qwen4 architecture (Aug 26). 125B main + 51B N-gram + 4B MTP, only 6B active per token. Native 262K context (extends to 1M). GDN hybrid + QSA attention target 'ultimate cost-efficiency' — ~$0.16/$0.47 per MTok."
       }
     ],
-    activity: "Aug 14: Qwen3.8-27B became available, following the Aug 12 release of the 2.4T Qwen3.8-2.4T-A95B model. Qwen3.7 family rolled out May-June 2026 via Alibaba Cloud Model Studio with a US-region variant (qwen3.7-plus-us). Cross-scaffold generalization is the differentiator — the same model runs consistently across rival agent harnesses.",
+    activity: "Aug 26: Qwen3.8-Flash-Next open-weight Qwen4-architecture preview. Aug 14: Qwen3.8-27B; Aug 12: 2.4T Qwen3.8-2.4T-A95B. Qwen3.7 family rolled out May-June 2026 via Alibaba Cloud Model Studio. Cross-scaffold generalization is the differentiator.",
     retention: "Full-stack integration from chips to apps.",
     sources: [
       { label: "Qwen3.7: The Agent Frontier — qwen.ai", url: "https://qwen.ai/blog?id=qwen3.7" },
@@ -866,10 +883,11 @@ window.AI_COMPANIES = [
     name: "Zhipu AI (\u667A\u8C31 / Z.ai)",
     flag: "\uD83C\uDDE8\uD83C\uDDF3",
     region: "china",
-    tagline: "GLM-5.2: new 'DeepSeek moment'. MIT, 1M ctx, within a point of Opus 4.8 at 1/5 cost.",
+    tagline: "GLM-5.3: scaled post-training, emergent cyber capability. MIT, 1M ctx. + GLM-5.3-Flash free multimodal.",
     tags: [
       { label: "OPEN", type: "open" },
-      { label: "GLM-5.2", type: "model" },
+      { label: "GLM-5.3", type: "model" },
+      { label: "GLM-5.3-Flash", type: "model" },
       { label: "AutoGLM", type: "model" }
     ],
     models: [
@@ -879,6 +897,20 @@ window.AI_COMPANIES = [
         released: "2026-06-13",
         url: "https://chat.z.ai",
         desc: "Flagship for long-horizon tasks — a substantial leap over GLM-5.1 with a genuinely usable 1M-token context. First Chinese model in the global top three on a major benchmark; within a point of Opus 4.8 on agentic work at ~1/5 the cost. MIT-licensed weights."
+      },
+      {
+        name: "GLM-5.3",
+        type: "llm",
+        released: "2026-08-14",
+        url: "https://chat.z.ai",
+        desc: "Released Aug 14 — same base as GLM-5.2; every gain comes from scaled post-training ('environment scaling'). ~50% better than GLM-5.2 on Z.ai's coding benchmark; Terminal-Bench 3.0 jumps to 28.3 (from 4.6), 2.1 to 88.2. Surprise 'emergent cyber capability' tops CyberGym. Open weights expected ~Aug 28 after safety hardening (MIT, like 5.2)."
+      },
+      {
+        name: "GLM-5.3-Flash",
+        type: "vlm",
+        released: "2026-08-26",
+        url: "https://chat.z.ai",
+        desc: "Multimodal (text/image/video) open-weights model that surfaced as 'Ox Alpha' on OpenRouter Aug 20 and was confirmed GLM-5.3-Flash by Bloomberg Aug 26. 320B params / 18B active, 1M context, free on OpenRouter — the biggest launch in the platform's history by token volume."
       },
       {
         name: "GLM-5V-Turbo",
@@ -895,7 +927,7 @@ window.AI_COMPANIES = [
         desc: "Browser and phone agents for autonomous web tasks."
       }
     ],
-    activity: "GLM-5.2 (Jun 13) triggered a 'DeepSeek moment' — OpenRouter token traffic climbed faster than after DeepSeek's V4 launch. Hugging Face used a Z.ai open model to contain the OpenAI breach. GLM-5.3 surfaced briefly in search indexes (Jul 29) — likely the next release.",
+    activity: "Aug 14: GLM-5.3 launched — post-training-only gains, major coding uplift, and an 'emergent cyber capability' that topped CyberGym; open weights expected ~Aug 28. Aug 20-26: GLM-5.3-Flash (as 'Ox Alpha') became the most-used model in OpenRouter history. GLM-5.2 (Jun 13) triggered a 'DeepSeek moment'; HF used a Z.ai model to contain the OpenAI breach.",
     retention: "Academic credibility over hype cycles.",
     sources: [
       { label: "GLM-5.2: Built for Long-Horizon Tasks — z.ai", url: "https://z.ai/blog/glm-5.2" },

@@ -89,5 +89,14 @@ window.AI_IMAGE_MODELS = {
       url: "https://playground.bfl.ai",
       desc: "Fastest image models — 9B and 4B variants with sub-second inference, unifying generation and editing in a compact architecture. Apache 2.0 on 4B; runs in ~13GB VRAM on consumer GPUs. FP8/NVFP4 quantized versions with NVIDIA."
     }
+  ],
+  grok: [
+    {
+      name: "Grok Imagine Image 2.0",
+      type: "image",
+      released: "2026-08-07",
+      url: "https://grok.com/imagine",
+      desc: "xAI's image generation + editing model, the new Quality Mode in Grok Imagine (web, iOS, Android). Region-level editing, up to five-reference blending, and strong text rendering; ranked #2 on the Text-to-Image Arena leaderboard at launch, behind OpenAI's GPT Image 2."
+    }
   ]
 };

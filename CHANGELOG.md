@@ -1,5 +1,14 @@
 # AI Model Tracker Changelog
 
+## 2026-08-31 — Catalog refreshed through late August
+- Added models released between Aug 14 and Aug 26 that were missing from the Aug 23 snapshot:
+  - Zhipu AI: GLM-5.3 (Aug 14 — post-training-only coding/cyber gains) and GLM-5.3-Flash (Aug 26; surfaced as "Ox Alpha", 320B/18B, free on OpenRouter, biggest launch in the platform's history).
+  - DeepSeek: V4-Flash-Vision-Exp (Aug 21 — first vision-capable Flash model, experimental API).
+  - Alibaba/Qwen: Qwen3.8-Flash-Next (Aug 26 — open-weight Qwen4-architecture preview; 125B + 51B N-gram, 6B active per token).
+  - xAI: Grok Imagine Image 2.0 (Aug 7 — generation + editing, #2 on the Text-to-Image Arena at launch).
+- Updated company taglines, model tags, and activity lines to reflect the new entries.
+- Bumped tracker timestamp to 2026-08-31.
+
 ## 2026-08-23 — Model catalog refreshed
 - Updated the tracker timestamp across the homepage, company pages, README, and model cards.
 - Added OpenAI GPT-5.6 Cyber (Aug 10), Google Gemini 3.7 Flash (Aug 13), Microsoft MAI-Thinking-1 (Aug 12), and Qwen3.8 open models (Aug 12–14).
